@@ -1,6 +1,7 @@
 """Generate the static site from approved summaries.
 
-Writes outputs/site/index.html (self-contained) and outputs/site/data.json.
+Writes docs/index.html (self-contained) and docs/data.json. The folder is docs/
+because that is one of only two locations GitHub Pages will serve from.
 
 Everything the page needs is embedded, so the site works from any static host or
 straight off the filesystem. Filtering and search run in the browser.
@@ -71,6 +72,11 @@ def build(db_path=None, out_dir=None) -> dict:
     (out / "data.json").write_text(
         json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8"
     )
+
+    # GitHub Pages pipes a site through Jekyll unless this file exists. Jekyll
+    # silently ignores files and folders beginning with an underscore, which is a
+    # confusing way to lose a file later. Opt out once, here.
+    (out / ".nojekyll").write_text("", encoding="utf-8")
 
     page = (
         TEMPLATE.replace("{{TITLE}}", html.escape(config.SITE_TITLE))

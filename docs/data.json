@@ -1,0 +1,941 @@
+{
+  "generated": "2026-09-20",
+  "count": 23,
+  "species": [
+    "Acadian redfish",
+    "Albacore tuna",
+    "American lobster",
+    "Atlantic cod",
+    "Atlantic deep-sea red crab",
+    "Atlantic halibut",
+    "Atlantic herring",
+    "Atlantic mackerel",
+    "Atlantic sea scallop",
+    "Atlantic sturgeon",
+    "Atlantic surfclam",
+    "Atlantic wolffish",
+    "Bigeye tuna",
+    "Bluefin tuna",
+    "Bluefish",
+    "Butterfish",
+    "Chub mackerel",
+    "Coastal sharks",
+    "Golden tilefish",
+    "Haddock",
+    "Illex squid",
+    "Jonah crab",
+    "Longfin squid",
+    "Monkfish",
+    "Ocean pout",
+    "Ocean quahog",
+    "Skipjack tuna",
+    "Summer flounder",
+    "Swordfish",
+    "White hake",
+    "Winter flounder",
+    "Yellowfin tuna",
+    "Yellowtail flounder"
+  ],
+  "regions": [
+    "Atlantic Ocean",
+    "Cape Cod",
+    "Caribbean Sea",
+    "Eastern Gulf of Maine",
+    "Federal waters",
+    "Georges Bank",
+    "Greater Atlantic",
+    "Gulf of America",
+    "Gulf of Maine",
+    "Maine",
+    "Massachusetts",
+    "Mid-Atlantic",
+    "New England",
+    "New Jersey",
+    "North Carolina",
+    "Northeast Distant Gear Restricted Area",
+    "Rhode Island",
+    "Southern New England",
+    "Virginia",
+    "Western Gulf of Maine"
+  ],
+  "types": [
+    "Notice",
+    "Proposed Rule",
+    "Rule"
+  ],
+  "notices": [
+    {
+      "id": "2026-18629",
+      "title": "Magnuson-Stevens Act Provisions; Atlantic Coastal Fisheries Cooperative Management Act Provisions; General Provisions for Domestic Fisheries; Application for Exempted Fishing Permits",
+      "type": "Notice",
+      "published": "2026-09-14",
+      "effective": "",
+      "url": "https://www.federalregister.gov/documents/2026/09/14/2026-18629/magnuson-stevens-act-provisions-atlantic-coastal-fisheries-cooperative-management-act-provisions",
+      "what_changed": "The National Marine Fisheries Service (NMFS) announced that it has received a complete application for an Exempted Fishing Permit (EFP) from the Maine Department of Marine Resources (ME DMR) and is taking public comment on it. An EFP lets federally permitted vessels fish outside certain rules for a research project. The proposed project would test acoustic on-demand, timed-release, and spring-release gear retrieval systems, plus gear geolocation technology, in Gulf of Maine trap/pot and gillnet fisheries. The stated goal is to reduce the risk of large whale entanglement in vertical lines. This is a notice with a request for comments, not a final decision.",
+      "who_affected": "Federally permitted trap/pot and anchored gillnet vessels in the Gulf of Maine that would take part in the Maine Department of Marine Resources project, plus anyone who wants to comment on the application.",
+      "key_details": [
+        "Comments must be received on or before September 29, 2026; email nmfs.gar.efp@noaa.gov with subject line \"ME DMR 2027 On-demand EFP\"",
+        "Requested exemptions: 50 CFR 697.21(b)(2) gear marking (trap/pot trawls of more than three traps with no more than one surface marking) and 50 CFR 648.84(b) gear marking (gillnet gear with no more than one surface marking)",
+        "Project runs 01/01/2027 to 12/31/2027",
+        "Project locations: trap/pot in Lobster Management Area 1 and all Maine Lobster Conservation Zones (A-G); gillnet in Statistical Areas 513, 514, and 515",
+        "Up to 65 vessels total, including up to 7 gillnet vessels; the rest trap/pot",
+        "Anticipated effort: up to 6,240 trap/pot trawl retrievals and up to 500 gillnet string retrievals for the gear library component, plus up to 150 trap/pot trawl retrievals for the geolocation component",
+        "Trawls would not exceed 50 traps; gear library soak times no shorter than 3 days and no longer than 30 days",
+        "Gillnets: 15-30.5 centimeter mesh, not exceeding 3,200 meters, estimated soak of no more than 24 hours",
+        "Geolocation trials: up to 3 trawls within a one-kilometer radius, soak no longer than 1 hour each, up to 10 single-day trials, maximum 150 gear retrievals",
+        "Under earlier EFPs, ME DMR has done 6,715 trap/pot hauls; 2,170 of those under the most recent permit, DA25-005, effective December 1, 2025; no gillnet hauls and 55 geolocation hauls so far",
+        "Proposed practices include unique white and blue buoy line markings above required regional markings, weekly mandatory gear loss reporting, a 10-knot (5.1 meters per second) speed limit in dynamic management areas and areas closed to vertical lines or where whales are seen, and advance notice to Maine Marine Patrol and the NOAA Office of Law Enforcement",
+        "Scientific observers may join participants on up to two trips per vessel",
+        "At least one traditional surface marking would remain on trap trawls of more than three traps and on all gillnet gear; no fully ropeless trawls",
+        "Any legal catch would be sold to a dealer"
+      ],
+      "species": [
+        "American lobster"
+      ],
+      "regions": [
+        "Gulf of Maine",
+        "Maine",
+        "Federal waters",
+        "Greater Atlantic",
+        "New England"
+      ],
+      "open_questions": [
+        "The notice names the North Atlantic right whale and references the Harbor Porpoise Take Reduction Plan, but neither is on the allowed species tag list, so they are not tagged.",
+        "The number of trips, trip duration, total days, and number and duration of sets are listed only as \"See Project Narrative\" in the project summary table; the narrative does not state these figures directly.",
+        "The notice does not say which finfish species the participating gillnet vessels would target or land.",
+        "The notice does not state whether or when NMFS will approve the EFP, or an effective date for the permit itself."
+      ]
+    },
+    {
+      "id": "2026-18623",
+      "title": "Fisheries of the Northeastern United States; Atlantic Bluefish Fishery; Quota Transfer From New Jersey to North Carolina",
+      "type": "Rule",
+      "published": "2026-09-11",
+      "effective": "2026-09-10",
+      "url": "https://www.federalregister.gov/documents/2026/09/11/2026-18623/fisheries-of-the-northeastern-united-states-atlantic-bluefish-fishery-quota-transfer-from-new-jersey",
+      "what_changed": "New Jersey is giving part of its 2026 commercial bluefish quota to North Carolina. The National Marine Fisheries Service (NMFS) approved the swap, which the two states agreed to. The transfer is 250,000 pounds (113,398 kilograms). NMFS says the request came in so North Carolina would not go over its 2026 state quota.",
+      "who_affected": "Commercial bluefish fishing under the New Jersey and North Carolina state quotas in the Atlantic bluefish fishery.",
+      "key_details": [
+        "Amount transferred: 250,000 lb (113,398 kg) of Atlantic bluefish, from New Jersey to North Carolina",
+        "Revised 2026 New Jersey quota: 408,379 lb (185,238 kg)",
+        "Revised 2026 North Carolina quota: 1,743,521 lb (790,848 kg)",
+        "Runs through December 31, 2026",
+        "Original 2026 allocations were published February 19, 2026 (91 FR 7896)",
+        "Transfer mechanism comes from 50 CFR 648.162(e); bluefish rules are at 50 CFR 648.160-648.167",
+        "Regional Administrator found the three transfer criteria were met: the overall annual quota can still be fully harvested, the transfer addresses an unforeseen variation or contingency, and it fits the Fishery Management Plan and the Magnuson-Stevens Fishery Conservation and Management Act"
+      ],
+      "species": [
+        "Bluefish"
+      ],
+      "regions": [
+        "New Jersey",
+        "North Carolina",
+        "Mid-Atlantic",
+        "Greater Atlantic"
+      ],
+      "open_questions": []
+    },
+    {
+      "id": "2026-18607",
+      "title": "Fisheries of the Northeastern United States; Greater Atlantic Region Catch Share Cost Recovery Program Updates",
+      "type": "Rule",
+      "published": "2026-09-11",
+      "effective": "2026-10-13",
+      "url": "https://www.federalregister.gov/documents/2026/09/11/2026-18607/fisheries-of-the-northeastern-united-states-greater-atlantic-region-catch-share-cost-recovery",
+      "what_changed": "The National Marine Fisheries Service (NMFS) finalized changes to how it bills permit holders for the cost of running three catch share programs in the Greater Atlantic Region. NMFS will now waive any cost recovery fee under $25 and roll that unbilled amount into the next year's accounting. Billing and payment timelines are also made the same across all three programs: bills go out within 6 months after the end of a cost recovery period, and payment is due within 30 days from the bill date. Nothing changed between the proposed rule and this final rule.",
+      "who_affected": "Permit holders in the Limited Access General Category (LAGC) Atlantic Sea Scallop Individual Fishing Quota (IFQ) program, the Golden Tilefish IFQ program, and the Atlantic Surfclam and Ocean Quahog Individual Transferable Quota (ITQ) program, all managed by the Greater Atlantic Regional Fisheries Office (GARFO).",
+      "key_details": [
+        "Fees under $25 are waived; the U.S. Department of Treasury's minimum threshold for debt collection is $25",
+        "Unbilled amounts below $25 roll over into the following year's cost recovery accounting",
+        "Bills to be sent within 6 months of the end of a cost recovery billing period for all three programs",
+        "Payment due within 30 days from the bill date (\"Net 30\") for all three programs",
+        "Prior payment windows: 30 days for Atlantic Surfclam and Ocean Quahog ITQ, 45 days for Golden Tilefish IFQ, 60 days for Atlantic Sea Scallop IFQ",
+        "Atlantic Sea Scallop IFQ cost recovery year runs October 1 through September 31 (as printed); bills sent before the end of the following March",
+        "Golden Tilefish IFQ and Atlantic Surfclam and Ocean Quahog ITQ cost recovery year follows the calendar year; bills sent before the end of the following June",
+        "Magnuson-Stevens Act caps the fee at 3 percent of the ex-vessel value of fish harvested under the program",
+        "Payment made electronically at https://www.pay.gov by credit card or direct automated clearing house (ACH) withdrawal; check may be authorized by NMFS if electronic payment is not possible",
+        "Amends 50 CFR 648.53(h)(4)(ii), 648.74(c)(5), and 648.294(h)(3)",
+        "Proposed rule published May 1, 2026 (91 FR 23385); comments closed June 1, 2026; three comments received, one supportive, two not relevant",
+        "Issued under section 305(d) of the Magnuson-Stevens Act; New England and Mid-Atlantic Fishery Management Councils did not object"
+      ],
+      "species": [
+        "Atlantic sea scallop",
+        "Golden tilefish",
+        "Atlantic surfclam",
+        "Ocean quahog"
+      ],
+      "regions": [
+        "Greater Atlantic",
+        "New England",
+        "Mid-Atlantic"
+      ],
+      "open_questions": [
+        "The text states the Atlantic Sea Scallop IFQ cost recovery year runs 'October 1 through September 31.' September has 30 days. Reviewer should confirm the intended end date.",
+        "The $25 fee waiver is described in the preamble, but the amended regulatory text reproduced here (648.53, 648.74, 648.294) does not appear to contain the $25 threshold. Reviewer should check the full rule for where that waiver is codified.",
+        "The preamble says permits cannot be renewed until the prior year's fee is paid, citing existing sections. It is not stated whether this rule changes that provision."
+      ]
+    },
+    {
+      "id": "2026-18388",
+      "title": "Atlantic Highly Migratory Species; Schedules for Atlantic Shark Identification Workshops and Protected Species Safe Handling, Release, and Identification Workshops",
+      "type": "Notice",
+      "published": "2026-09-09",
+      "effective": "",
+      "url": "https://www.federalregister.gov/documents/2026/09/09/2026-18388/atlantic-highly-migratory-species-schedules-for-atlantic-shark-identification-workshops-and",
+      "what_changed": "The National Marine Fisheries Service (NMFS) announced the dates and locations for its next round of free Atlantic Shark Identification Workshops and Safe Handling, Release, and Identification Workshops. Two shark identification sessions are set for October 19 and November 11, 2026, and three safe handling sessions are set for October 14, November 2, and December 3, 2026. This is a scheduling notice only. It restates existing workshop and certificate rules under 50 CFR 635.8 and notes that the online recertification option NMFS added in December 2021 is still available for people who already took an in-person class.",
+      "who_affected": "Federally permitted Atlantic shark dealers (and their designated proxies), and owners and operators of vessels holding shark or swordfish limited access permits that fish with bottom longline, pelagic longline, or gillnet gear.",
+      "key_details": [
+        "Atlantic Shark Identification Workshops: October 19, 2026, 12 p.m.-4 p.m., Hilton Garden Inn, 6745 Rock Spring Rd., Wilmington, NC; November 11, 2026, 12 p.m.-4 p.m., Hampton Inn & Suites Largo, 100 East Bay Dr., Largo, FL",
+        "Safe Handling, Release, and Identification Workshops: October 14, 2026, 9 a.m.-1 p.m., Hilton Garden Inn, 1 Thurber Street, Warwick, RI; November 2, 2026, 9 a.m.-1 p.m., Hilton Garden Inn, 5353 N. Virginia Dare Trail, Kitty Hawk, NC; December 3, 2026, 9 a.m.-1 p.m., Holiday Inn Manahawkin, 151 Route 72, Manahawkin, NJ",
+        "Workshops are free; registration is through Angler Conservation Education at 386-682-0158; pre-registration is recommended but not required",
+        "Workshop certificates are valid for 3 years; certificates issued in 2023 expire in 2026",
+        "Shark dealer certificates are issued for each business location permitted to receive Atlantic sharks; only one certificate is issued to each proxy",
+        "Safe handling topics include release of hooked or entangled sea turtles, marine mammals, smalltooth sawfish, Atlantic sturgeon, and prohibited sharks",
+        "Online recertification is limited to dealers, owners, and operators who previously attended an in-person workshop; course link is https://hmsworkshop.fisheries.noaa.gov/start",
+        "Contact: Anna Quintrell, anna.quintrell@noaa.gov, 301-427-8503"
+      ],
+      "species": [
+        "Swordfish",
+        "Atlantic sturgeon",
+        "Coastal sharks"
+      ],
+      "regions": [
+        "North Carolina",
+        "Rhode Island",
+        "New Jersey",
+        "Greater Atlantic"
+      ],
+      "open_questions": [
+        "The notice refers to 'Atlantic sharks' and 'prohibited sharks' as groups rather than naming individual shark species; a reviewer may want to confirm whether a broader or narrower species tag set is appropriate.",
+        "One workshop is in Largo, Florida, which is not on the allowed region list, so Florida is not tagged.",
+        "The notice also covers protected species not on the allowed species list (sea turtles, marine mammals, smalltooth sawfish), which are therefore untagged.",
+        "No effective date is stated in the document."
+      ]
+    },
+    {
+      "id": "2026-18305",
+      "title": "Agency Information Collection Activities; Submission to the Office of Management and Budget (OMB) for Review and Approval; Comment Request; American Lobster-Annual Trap Transfer Program",
+      "type": "Notice",
+      "published": "2026-09-09",
+      "effective": "",
+      "url": "https://www.federalregister.gov/documents/2026/09/09/2026-18305/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for",
+      "what_changed": "This is a paperwork notice, not a change to fishing rules. The National Oceanic and Atmospheric Administration (NOAA) is asking the Office of Management and Budget (OMB) to renew an existing information collection for the American Lobster Annual Trap Transfer Program. The public already had a 60-day comment period that opened June 11, 2026; this notice opens an extra 30 days for comments. Nothing about the trap transfer program itself is described as changing.",
+      "who_affected": "Federal lobster permit holders who buy or sell trap allocation in Lobster Conservation Management Areas 2 and 3 or Outer Cape Cod. The notice lists the affected public as business or other for-profit organizations.",
+      "key_details": [
+        "OMB Control Number 0648-0673; request type is a regular submission to extend a current collection",
+        "Estimated 153 respondents, about 10 minutes per response, 13 total annual burden hours",
+        "Application forms are collected each year during a 2-month window, August 1 through September 30",
+        "Revised trap allocations from transfers take effect at the start of the next Federal lobster fishing year, May 1",
+        "Both seller and buyer sign and date the application form, showing the seller has enough allocation and the buyer has room under the applicable trap cap",
+        "Program covers trap allocation from Areas 2, 3, or Outer Cape Cod",
+        "Managed under the Atlantic Coastal Fisheries Cooperative Management Act (16 U.S.C. 5101 et seq.) and Amendment 3 of the Atlantic States Marine Fisheries Commission (ASMFC) Interstate Fishery Management Plan",
+        "Regulations for the Exclusive Economic Zone (EEZ) are at 50 CFR part 697",
+        "Comments go to www.reginfo.gov within 30 days of publication",
+        "Prior comment period announced June 11, 2026 (91 FR 35465)"
+      ],
+      "species": [
+        "American lobster"
+      ],
+      "regions": [
+        "Cape Cod",
+        "Federal waters",
+        "Greater Atlantic"
+      ],
+      "open_questions": [
+        "The notice names Lobster Conservation Management Areas 2 and 3 and Outer Cape Cod but does not describe their geographic boundaries; a reviewer may want to confirm which states or waters these cover.",
+        "The notice references 'scheduled trap allocation reductions' without giving figures or a schedule."
+      ]
+    },
+    {
+      "id": "2026-17500",
+      "title": "Fisheries of the Northeastern United States; Monkfish; Framework Adjustment 17",
+      "type": "Rule",
+      "published": "2026-08-27",
+      "effective": "2026-09-28",
+      "url": "https://www.federalregister.gov/documents/2026/08/27/2026-17500/fisheries-of-the-northeastern-united-states-monkfish-framework-adjustment-17",
+      "what_changed": "The National Marine Fisheries Service (NMFS) put in place Framework Adjustment 17 to the Monkfish Fishery Management Plan (FMP). It sets monkfish catch limits for fishing year 2026 and projects them for 2027 and 2028. Overall catch limits stay the same as the 2023-2025 levels, but changes in expected discards shift the target total allowable landings down 3 percent in the northern area and up slightly in the southern area. The rule also changes who triggers the overage accountability measure, and it adds default catch limits that carry over the prior year's numbers if new ones are not published in time.",
+      "who_affected": "Vessels in the monkfish fishery, which runs from Maine to North Carolina from the coast to the end of the continental shelf, split into the Northern Fishery Management Area (Gulf of Maine and northern Georges Bank) and the Southern Fishery Management Area (southern flank of Georges Bank through Southern New England into the Mid-Atlantic Bight to North Carolina). The fishery is jointly managed by the New England and Mid-Atlantic Fishery Management Councils.",
+      "key_details": [
+        "Northern area, 2026-2028: acceptable biological catch (ABC) and annual catch limit (ACL) both 6,224 metric tons (mt), no change from 2023-2025",
+        "Northern area management uncertainty (3%): 187 mt; annual catch target (ACT) 6,038 mt, no change",
+        "Northern area expected discards: 863 mt, up 18.4 percent; target total allowable landings (TAL) 5,309 mt, down 3 percent",
+        "Southern area, 2026-2028: ABC and ACL both 5,861 mt, no change from 2023-2025",
+        "Southern area management uncertainty (3%): 176 mt; ACT 5,685 mt, no change",
+        "Southern area expected discards: 2,198.5 mt, down 0.3 percent; TAL 3,487 mt, up 0.2 percent",
+        "Expected discards were calculated using the median of the most recent 10 years of data",
+        "Based on final 2024 year-end accounting, NMFS determined no overage adjustment is needed for fishing year 2026",
+        "Framework 17 removes the requirement that the Councils trigger the ACL overage accountability measure; the Regional Administrator now makes the adjustment",
+        "If an ACL is exceeded, the overage is deducted pound for pound from the ACT in the second fishing year after the overage; days-at-sea and trip limits may be revised after consultation with the Councils",
+        "New 50 CFR 648.96(c)(1)(iv): if final specifications are not published before a fishing year starts, that year's specifications equal the prior year's until replaced",
+        "The default-specification rules were approved in Framework 13 but were left out of the August 11, 2023 final rule (88 FR 54495); this action corrects that omission",
+        "Proposed rule published April 23, 2026 (91 FR 21779); comment period closed May 26, 2026; two comments received",
+        "One change from the proposed rule: minor regulatory text edit clarifying the Regional Administrator's role in implementing an accountability measure",
+        "NMFS will provide notice of the 2027 and 2028 quotas before the start of each of those fishing years"
+      ],
+      "species": [
+        "Monkfish"
+      ],
+      "regions": [
+        "Gulf of Maine",
+        "Georges Bank",
+        "Southern New England",
+        "Mid-Atlantic",
+        "New England",
+        "Greater Atlantic",
+        "Maine",
+        "North Carolina",
+        "Federal waters"
+      ],
+      "open_questions": [
+        "The notice does not give the calendar start date of the monkfish fishing year.",
+        "The notice does not list the specific days-at-sea allocations or trip/landing limits that result from these specifications.",
+        "The notice references an overfishing limit (OFL) in the default-specification rule but no OFL figures appear in Table 1."
+      ]
+    },
+    {
+      "id": "2026-17148",
+      "title": "Fisheries of the Northeastern United States; Mackerel, Squid, and Butterfish; 2026 Illex Squid Quota Harvested",
+      "type": "Rule",
+      "published": "2026-08-21",
+      "effective": "2026-08-23",
+      "url": "https://www.federalregister.gov/documents/2026/08/21/2026-17148/fisheries-of-the-northeastern-united-states-mackerel-squid-and-butterfish-2026-illex-squid-quota",
+      "what_changed": "The National Marine Fisheries Service (NMFS) is closing the directed Illex squid fishery in Federal waters for the rest of 2026. The closure was triggered by a projection that 96 percent of the 2026 domestic annual harvest (DAH), also called the commercial quota, will be caught. During the closure, a 10,000-pound per-trip possession limit applies, along with a limit of one Illex squid landing per calendar day. Federally permitted dealers face a matching 10,000-pound limit on Illex squid received from a vessel. NMFS skipped advance public comment and the usual 30-day wait, saying the data came in only recently and high-volume landings can burn through the quota fast.",
+      "who_affected": "Commercial vessels fishing for Illex squid in Federal waters, including those holding an Illex squid moratorium permit, and federally permitted dealers who buy Illex squid.",
+      "key_details": [
+        "Closure runs from 0001 hr local time August 23, 2026, through 2400 hr local time December 31, 2026",
+        "Trigger: Regional Administrator projected 96 percent of the 2026 Illex squid DAH would be harvested by August 23, 2026",
+        "2026 Illex squid DAH set at 38,631 metric tons for the January 1-December 31, 2026 fishing year (final rule at 91 FR 42360, July 9, 2026)",
+        "Possession limit during closure: 10,000 lb (4,536 kg) of Illex squid per trip, at any time",
+        "Landing limit: Illex squid may be landed only once per calendar day",
+        "Vessels with an Illex squid moratorium permit that entered port before 0001 hr local time on August 23, 2026, may land and sell more than 10,000 lb from that trip",
+        "Dealers may not purchase, possess, or receive more than 10,000 lb (4,536 kg) of Illex squid from a vessel unless the vessel entered port before the closure start",
+        "Governing rules: 50 CFR part 648, subpart B; closure required by 648.24(a)(2); possession limits at 648.26(c)(2)",
+        "Contact: Maria Fenton, Fishery Policy Analyst, 978-281-9196"
+      ],
+      "species": [
+        "Illex squid"
+      ],
+      "regions": [
+        "Federal waters",
+        "Greater Atlantic"
+      ],
+      "open_questions": []
+    },
+    {
+      "id": "2026-17129",
+      "title": "Fisheries of the Northeastern United States; Summer Flounder Fishery; Quota Transfer From North Carolina to Massachusetts",
+      "type": "Rule",
+      "published": "2026-08-21",
+      "effective": "2026-08-20",
+      "url": "https://www.federalregister.gov/documents/2026/08/21/2026-17129/fisheries-of-the-northeastern-united-states-summer-flounder-fishery-quota-transfer-from-north",
+      "what_changed": "North Carolina and Massachusetts agreed to move a small piece of North Carolina's 2026 commercial summer flounder quota to Massachusetts. The National Marine Fisheries Service (NMFS) approved the transfer and published the updated 2026 quota numbers for both states. The transfer was requested to repay landings made by an out-of-state permitted vessel under a safe harbor agreement. The underlying rules and the state-by-state allocation process are unchanged.",
+      "who_affected": "The notice names the commercial summer flounder fishery in North Carolina and Massachusetts. It also references an out-of-state permitted vessel whose landings prompted the repayment.",
+      "key_details": [
+        "Amount transferred: 2,435 pounds (1,104 kilograms) of summer flounder",
+        "Revised 2026 North Carolina commercial quota: 2,899,571 pounds (1,315,223 kilograms)",
+        "Revised 2026 Massachusetts commercial quota: 1,048,732 pounds (475,697 kilograms)",
+        "Transfer runs through December 31, 2026",
+        "Made under the Summer Flounder, Scup, and Black Sea Bass Fishery Management Plan quota transfer provisions at 50 CFR 648.102(c)(2)",
+        "The Regional Administrator found three criteria met: the transfer would not keep the overall annual quota from being fully harvested, it addresses an unforeseen variation or contingency, and it is consistent with the Fishery Management Plan and the Magnuson-Stevens Fishery Conservation and Management Act",
+        "Original 2026 allocations were published February 19, 2026 (91 FR 7896)"
+      ],
+      "species": [
+        "Summer flounder"
+      ],
+      "regions": [
+        "North Carolina",
+        "Massachusetts",
+        "Mid-Atlantic",
+        "New England",
+        "Greater Atlantic"
+      ],
+      "open_questions": []
+    },
+    {
+      "id": "2026-16870",
+      "title": "Atlantic Highly Migratory Species; North Atlantic Swordfish, South Atlantic Swordfish, North Atlantic Albacore, and Atlantic Bluefin Tuna Quotas",
+      "type": "Rule",
+      "published": "2026-08-19",
+      "effective": "2026-08-19",
+      "url": "https://www.federalregister.gov/documents/2026/08/19/2026-16870/atlantic-highly-migratory-species-north-atlantic-swordfish-south-atlantic-swordfish-north-atlantic",
+      "what_changed": "The National Marine Fisheries Service (NMFS) put in place 2026 quotas for North Atlantic swordfish, South Atlantic swordfish, North Atlantic albacore tuna, and Atlantic bluefin tuna, based on decisions by the International Commission for the Conservation of Atlantic Tunas (ICCAT). The U.S. baseline bluefin tuna quota rose from 1,316.14 metric tons to 1,509.98 metric tons, and that new total was split among the existing domestic categories using the percentages already in the rules. The pelagic longline bycatch set-aside for bluefin tuna went from 25 metric tons to 62.5 metric tons, and it is now handed out to Individual Bluefin Tuna Quota (IBQ) shareholders with Atlantic-region shares instead of being tracked separately for the Northeast Distant Gear Restricted Area. NMFS also carried forward 2025 underharvest into the 2026 quotas and moved 30.8 metric tons of bluefin tuna quota from the Longline category back to the Reserve category. The rule adds a reference to the new ICCAT North Atlantic swordfish management procedure and deletes some outdated dead-discard language.",
+      "who_affected": "Atlantic Highly Migratory Species permit holders in the swordfish, bluefin tuna, and northern albacore fisheries, including Atlantic Tunas General, Harpoon, Longline, Trap, and Angling categories, HMS Charter/Headboat, Swordfish Directed, Incidental, Handgear and General Commercial, and Commercial Caribbean Small Boat permit holders. Pelagic longline IBQ shareholders with Atlantic-region shares are directly affected by the set-aside change.",
+      "key_details": [
+        "North Atlantic swordfish: baseline quota 2,937.6 metric tons dressed weight (mt dw); 440.6 mt dw carried over from 2025; adjusted 2026 quota 3,378.2 mt dw",
+        "2026 North Atlantic swordfish allocation: 3,028.2 mt dw directed (split equally between January-June and July-December), 300 mt dw incidental, 50 mt dw Reserve",
+        "2025 U.S. North Atlantic swordfish landings, including dead discards, were 637.7 mt dw; carryover capped at 15 percent of baseline",
+        "South Atlantic swordfish: baseline 75.2 mt dw (100 mt whole weight); adjusted 2026 quota 75.2 mt dw; no U.S. landings in 2025",
+        "South Atlantic swordfish international transfers: 37.6 mt dw to Namibia, 18.8 mt dw to Cote d'Ivoire, 18.8 mt dw to Belize",
+        "Northern albacore: baseline 889.4 metric tons; 222.4 mt carryover (capped at 25 percent); adjusted 2026 quota 1,111.8 mt; 2025 landings 188.8 mt",
+        "Bluefin tuna U.S. baseline quota: 1,509.98 mt, up from 1,316.14 mt; annual total with bycatch set-aside 1,572.48 mt",
+        "Bluefin tuna baseline category splits: General 815.4 mt (54 percent), Angling 341.3 mt (22.6 percent), Longline 240.1 mt (15.9 percent), Harpoon 67.9 mt (4.5 percent), Trap 1.5 mt (0.1 percent), Reserve 43.8 mt (2.9 percent)",
+        "General category subquotas: January-March 43.2 mt, June-August 407.7 mt, September 216.1 mt, October-November 106.0 mt, December 42.4 mt",
+        "Pelagic longline bycatch set-aside raised from 25 mt to 62.5 mt, allocated to IBQ shareholders with Atlantic-region shares by share percentage; Gulf-region shareholders receive none",
+        "2025 bluefin tuna adjusted U.S. quota was 1,199.94 mt; 2025 catch including dead discards was 1,125.1 mt, an underharvest of 74.8 mt carried to 2026",
+        "After the 30.8 mt transfer and the 74.8 mt carryover, the adjusted 2026 Longline category quota is 240.1 mt and the Reserve category quota is 112.2 mt",
+        "Adjusted 2026 Harpoon category quota is 74.3 mt (67.9 mt baseline plus a 6.4 mt July transfer)",
+        "Temporary quota adjustments and the transfer run through December 31, 2026",
+        "Swordfish conversion used: dressed weight x 1.33 = whole weight",
+        "NMFS received 39 written comments plus verbal comments at a public hearing webinar and an HMS Advisory Panel meeting"
+      ],
+      "species": [
+        "Swordfish",
+        "Bluefin tuna",
+        "Albacore tuna"
+      ],
+      "regions": [
+        "Atlantic Ocean",
+        "Greater Atlantic",
+        "Gulf of America",
+        "Caribbean Sea",
+        "Northeast Distant Gear Restricted Area"
+      ],
+      "open_questions": [
+        "The rule mentions pelagic longline statistical reporting areas NEC, NCA, and SAR under a non-preferred alternative but does not spell out what those abbreviations stand for or where those areas are.",
+        "The text references bluefin tuna Angling category subquota lines at 39 degrees 18 minutes North and 42 degrees North latitude, but does not describe the coastal locations these lines correspond to.",
+        "The full text does not state when the 62.5 mt set-aside will actually appear in IBQ accounts beyond saying shareholders 'should receive this additional amount shortly.'"
+      ]
+    },
+    {
+      "id": "2026-16591",
+      "title": "Atlantic Highly Migratory Species; Revisions to Fishing Gear Regulations",
+      "type": "Proposed Rule",
+      "published": "2026-08-14",
+      "effective": "",
+      "url": "https://www.federalregister.gov/documents/2026/08/14/2026-16591/atlantic-highly-migratory-species-revisions-to-fishing-gear-regulations",
+      "what_changed": "The National Marine Fisheries Service (NMFS) has proposed changes to fishing gear rules for Atlantic highly migratory species (HMS) — sharks, tunas, billfish, and swordfish. The proposal would let buoy gear be set and hauled with power assistance, such as electric or hydraulic winches, instead of by hand only. It would also open buoy gear to more permit types and let more species be kept on it, open speargun gear to more commercial permits for bigeye, albacore, yellowfin, and skipjack (BAYS) tunas, and write bait-collection gear such as cast nets and small dipnets into the rules. This is a proposed rule open for public comment, not a final rule.",
+      "who_affected": "NMFS lists these permit holders as affected: Swordfish Directed, Swordfish Handgear, Swordfish Incidental, Swordfish General Commercial, HMS Commercial Caribbean Small Boat (CCSB), Shark Directed, Shark Incidental, Smoothhound Shark, Atlantic Tunas Longline, Atlantic Tunas General category, HMS Charter/Headboat, and HMS Angling. The rules cover federal Atlantic and Gulf of America waters, with CCSB permits valid in the U.S. Caribbean only.",
+      "key_details": [
+        "Preferred Alternative A2: power assistance (electric or hydraulic) allowed for deploying and retrieving buoy gear mainline; electric reel costs about $8,000, hydraulic rig about $2,000",
+        "Preferred Alternative A4: buoy gear for swordfish authorized under the open access Swordfish General Commercial permit, limited to 5 buoys possessed or deployed per vessel",
+        "Existing 35-buoy limit stays for Swordfish Handgear LAP, Swordfish Directed LAP, and HMS CCSB permit holders",
+        "Permit holders with both a shark permit and a Swordfish General Commercial permit would be held to 5 buoys; other combinations to 35",
+        "Preferred Alternative A6: BAYS tunas could be retained on buoy gear by holders of a Swordfish Directed LAP plus Atlantic Tunas Longline category permit, or a Swordfish Handgear LAP plus Atlantic Tunas General category permit",
+        "Vessels holding only tuna permits would stay barred from buoy gear",
+        "Preferred Alternative A7: allowable shark species could be retained on buoy gear by Shark Directed LAP, Shark Incidental LAP, and Smoothhound Shark permit holders in federal Atlantic and Gulf waters, and by HMS CCSB permit holders in the U.S. Caribbean; existing retention limits and authorized species unchanged",
+        "Preferred Alternative B2: speargun gear authorized to retain and sell BAYS tunas under the Atlantic Tunas General category permit, HMS Charter/Headboat permit (commercial endorsement, non-for-hire trips only), and HMS CCSB permit",
+        "Preferred Alternative C2: small nets and other bait collection gear (cast nets, small dipnets) could be possessed and used on HMS vessels if too small or weak to capture HMS",
+        "Not preferred, Alternative A5: buoy gear under the Swordfish Incidental LAP, with the 30 fish per vessel per trip swordfish retention limit",
+        "Not preferred, Alternative B3: speargun retention of Atlantic bluefin tuna under HMS Angling and HMS Charter/Headboat permits",
+        "Two public hearing webinars: August 31, 2026, 1-3 p.m. ET and October 1, 2026, 1-3 p.m. ET",
+        "Docket NOAA-NMFS-2024-0050; permit counts as of December 2024 include 167 Swordfish Directed, 79 Swordfish Handgear, 120 HMS CCSB, 619 Swordfish General Commercial, 2,489 Atlantic Tunas General, 4,247 HMS Charter/Headboat"
+      ],
+      "species": [
+        "Swordfish",
+        "Bigeye tuna",
+        "Albacore tuna",
+        "Yellowfin tuna",
+        "Skipjack tuna",
+        "Bluefin tuna",
+        "Coastal sharks"
+      ],
+      "regions": [
+        "Atlantic Ocean",
+        "Gulf of America",
+        "Caribbean Sea",
+        "Greater Atlantic",
+        "Federal waters",
+        "Northeast Distant Gear Restricted Area"
+      ],
+      "open_questions": [
+        "The comment deadline is given two different ways: the DATES section says October 13, 2026, while the Request for Comments section says September 14, 2026. Which is correct?",
+        "Alternative A6 is described two different ways. The Proposed Measures section ties it to specific swordfish-plus-tuna permit combinations, while the regulatory flexibility analysis says BAYS tunas could be retained 'in all areas except for the Florida Swordfish Management Area' by Atlantic Tunas General category or Atlantic Tunas Longline LAP holders. Which description governs?",
+        "The 'Florida Swordfish Management Area' is named but not defined or mapped in the text provided, and it is not on the allowed region list.",
+        "No effective date is stated for the proposed rule.",
+        "The text references bait rules involving whole Atlantic mackerel and squid in the Northeast Distant gear restricted area, but does not specify which squid species."
+      ]
+    },
+    {
+      "id": "2026-15878",
+      "title": "Atlantic Highly Migratory Species; Atlantic Bluefin Tuna Fisheries; Closure of the Angling Category Gulf of Maine Area Trophy Fishery for 2026",
+      "type": "Rule",
+      "published": "2026-08-05",
+      "effective": "2026-08-04",
+      "url": "https://www.federalregister.gov/documents/2026/08/05/2026-15878/atlantic-highly-migratory-species-atlantic-bluefin-tuna-fisheries-closure-of-the-angling-category",
+      "what_changed": "The National Marine Fisheries Service (NMFS) closed the Angling category trophy Atlantic bluefin tuna fishery in the Gulf of Maine area for the rest of 2026. NMFS says landings data show the 2.3 metric ton subquota for that area has been reached and exceeded. Trophy bluefin are large medium and giant fish measuring 73 inches (185 cm) curved fork length or greater. NMFS had already closed the other three trophy areas earlier in 2026, so with this action the trophy bluefin fishery is closed in all areas for the year.",
+      "who_affected": "Vessels with Highly Migratory Species (HMS) Angling permits and HMS Charter/Headboat permits when fishing recreationally for bluefin tuna. The closure covers the Gulf of Maine trophy area, defined as waters north of 42\\u00b0 N latitude.",
+      "key_details": [
+        "Closure runs through December 31, 2026",
+        "Trophy bluefin tuna = 73 inches (185 cm) curved fork length or greater",
+        "Gulf of Maine trophy area subquota: 2.3 metric tons, reported as reached and exceeded",
+        "Angling category baseline quota: 297.4 metric tons; 9.2 mt (3.1 percent) sub-allocated to trophy bluefin, split 2.3 mt to each of four areas",
+        "Current baseline U.S. bluefin quota: 1,316.14 metric tons",
+        "Trophy areas: north of 42\\u00b0 N lat. (Gulf of Maine); south of 42\\u00b0 N and north of 39\\u00b018' N (southern New England); south of 39\\u00b018' N outside the Gulf of America (southern area); and the Gulf of America",
+        "Other trophy areas were closed earlier in 2026 (91 FR 1461, 91 FR 30247, 91 FR 40898)",
+        "A separate proposed rule (91 FR 24789) would raise the U.S. baseline quota to 1,509.98 mt, the Angling category quota to 341.3 mt, and each trophy subquota to 2.6 mt; comments closed June 8, 2026",
+        "NMFS states catch-and-release and tag-and-release of bluefin of all sizes may continue under 50 CFR 635.26",
+        "Catch reporting within 24 hours via hmspermits.noaa.gov, the HMS Catch Reporting app, or (888) 872-8862",
+        "NMFS waived prior public comment and the 30-day delay in effectiveness for this action"
+      ],
+      "species": [
+        "Bluefin tuna"
+      ],
+      "regions": [
+        "Gulf of Maine",
+        "New England",
+        "Atlantic Ocean",
+        "Greater Atlantic"
+      ],
+      "open_questions": [
+        "The notice does not say whether the final rule implementing ICCAT Recommendation 25-05 has been issued or how it would interact with this closure if adopted later in 2026."
+      ]
+    },
+    {
+      "id": "2026-15784",
+      "title": "Magnuson-Stevens Fishery Conservation and Management Act Provisions; Fisheries of the Northeastern United States; Northeast Multispecies Fishery; Framework Adjustment 72",
+      "type": "Rule",
+      "published": "2026-08-04",
+      "effective": "2026-08-04",
+      "url": "https://www.federalregister.gov/documents/2026/08/04/2026-15784/magnuson-stevens-fishery-conservation-and-management-act-provisions-fisheries-of-the-northeastern",
+      "what_changed": "The National Marine Fisheries Service (NMFS) put Framework Adjustment 72 to the Northeast Multispecies (groundfish) Fishery Management Plan into effect as an interim final rule, skipping advance public comment. It sets new status determination criteria for Georges Bank yellowtail flounder, replacing the \"unknown\" criteria in place since Framework 53. It sets 2026 shared United States/Canada quotas for eastern Georges Bank cod, eastern Georges Bank haddock, and Georges Bank yellowtail flounder, and sets catch limits for 12 groundfish stocks, some for 2026 and some for 2026 through 2030. It also lets the Greater Atlantic Regional Administrator set recreational measures for cod and haddock stocks that have no recreational sub-annual catch limit, and it removes the sector management uncertainty buffer for 2026 for all allocated stocks except Southern New England cod.",
+      "who_affected": "Commercial groundfish permit holders in the Northeast Multispecies fishery, both sector members and common pool vessels, plus recreational and charter/party fishermen targeting Atlantic cod and haddock. Stocks named span Georges Bank, the Gulf of Maine (eastern and western), Cape Cod, and Southern New England/Mid-Atlantic waters.",
+      "key_details": [
+        "2026 United States quota for eastern Georges Bank cod is an 84-percent increase over 2025; eastern Georges Bank haddock is down 36 percent; Georges Bank yellowtail flounder is down 68 percent",
+        "Georges Bank haddock quota increases 103 percent compared with the 2025 fishing year allocation",
+        "Catch limits set for 2026 only: Georges Bank cod, Georges Bank haddock, Georges Bank yellowtail flounder",
+        "Catch limits set for 2026-2030: Southern New England/Mid-Atlantic yellowtail flounder, Cape Cod/Gulf of Maine yellowtail flounder, Georges Bank winter flounder, Gulf of Maine winter flounder, Southern New England/Mid-Atlantic winter flounder, redfish, white hake, ocean pout, and Atlantic wolffish",
+        "Expected Canadian catch deducted from total acceptable biological catch: Georges Bank winter flounder 38 metric tons, white hake 57 metric tons, Atlantic halibut 71 metric tons",
+        "At-sea monitoring coverage target for fishing year 2026 announced at 100 percent on March 13, 2026; sector management uncertainty buffer set to zero for 2026 for all allocated stocks except Southern New England cod",
+        "Council-recommended removal of the white hake sector buffer applies in future years when the at-sea monitoring target is 90 percent or higher, through 2030",
+        "Regional Administrator recreational-measure process now covers Georges Bank haddock, Georges Bank cod, and eastern Gulf of Maine cod; the rule makes no changes to current recreational measures for any cod or haddock stock",
+        "Default specifications in place before this rule were 75 percent of the prior year's levels for stocks without 2026 specifications",
+        "Sector groundfish revenues expected to rise up to $1.8 million from removing the management uncertainty buffer alone",
+        "Commercial groundfish fishery valued at roughly $40 million in ex-vessel revenue annually; the sector program accounts for 98 percent of commercial catch",
+        "Comments due by 5 p.m. EST on September 3, 2026, under docket NOAA-NMFS-2026-0859",
+        "Specifications are now adopted for up to 5 years, up from 3, reflecting Amendment 26",
+        "Minor clarifying edits made to 50 CFR 648.89(b)(2)(ii) and 50 CFR 648.82(e)(1)(i)"
+      ],
+      "species": [
+        "Atlantic cod",
+        "Haddock",
+        "Yellowtail flounder",
+        "Winter flounder",
+        "Acadian redfish",
+        "White hake",
+        "Ocean pout",
+        "Atlantic wolffish",
+        "Atlantic halibut"
+      ],
+      "regions": [
+        "Georges Bank",
+        "Gulf of Maine",
+        "Eastern Gulf of Maine",
+        "Western Gulf of Maine",
+        "Cape Cod",
+        "Southern New England",
+        "Mid-Atlantic",
+        "New England",
+        "Greater Atlantic"
+      ],
+      "open_questions": [
+        "The notice references Tables 1 through 16 for the actual numeric status determination criteria, quotas, annual catch limits, sub-annual catch limits, sector potential sector contributions, annual catch entitlements, common pool trimester total allowable catches, and incidental catch total allowable catches, but the table contents are not included in the text provided. A reviewer should pull the full notice for the figures.",
+        "The text says the Georges Bank haddock quota increases 103 percent versus the 2025 allocation, while the shared U.S./Canada eastern Georges Bank haddock quota decreases 36 percent. Confirm which stock unit each figure applies to.",
+        "Whether NMFS has determined that any 2025 overages occurred for the shared Georges Bank stocks, which would trigger a future reduction action, is not stated."
+      ]
+    },
+    {
+      "id": "2026-15684",
+      "title": "Atlantic Highly Migratory Species; Meeting of the Atlantic Highly Migratory Species Advisory Panel",
+      "type": "Notice",
+      "published": "2026-08-03",
+      "effective": "",
+      "url": "https://www.federalregister.gov/documents/2026/08/03/2026-15684/atlantic-highly-migratory-species-meeting-of-the-atlantic-highly-migratory-species-advisory-panel",
+      "what_changed": "The National Marine Fisheries Service (NMFS) announced a two-day meeting of the Atlantic Highly Migratory Species (HMS) Advisory Panel in September 2026. The panel will discuss options for conserving and managing Atlantic swordfish, shark, tuna, and billfish fisheries. This is a meeting announcement only; it does not change any fishing rules. The meeting is open to the public, in person and online.",
+      "who_affected": "The notice names Atlantic highly migratory species fisheries \\u2014 swordfish, sharks, tunas, and billfish \\u2014 managed under the 2006 Consolidated HMS Fishery Management Plan. Any member of the public may attend.",
+      "key_details": [
+        "Meeting runs Wednesday, September 9, 9 a.m. to 5 p.m. Eastern Time, and Thursday, September 10, 9 a.m. to 3 p.m. Eastern Time",
+        "Hybrid format: in person at the DoubleTree by Hilton Silver Spring Hotel, 8777 Georgia Avenue, Silver Spring, MD 20910, plus WebEx conference call and webinar",
+        "Access information posted at https://www.fisheries.noaa.gov/event/september-2026-hms-advisory-panel-meeting",
+        "Listed discussion topics: Atlantic bluefin tuna fishery year in review; HMS fisheries economics update; updates on various shark actions; continued discussion on actions under Executive Order 14276",
+        "NMFS says it will show presentations by webinar and allow public comment during times identified on the agenda",
+        "Webinar participants are encouraged to log or dial in 15 minutes early",
+        "Requests for sign language interpretation or other auxiliary aids go to Peter Cooper at 301-427-8503, at least 7 days before the meeting",
+        "Contacts: Peter Cooper (peter.cooper@noaa.gov) or Anna Quintrell (anna.quintrell@noaa.gov), 301-427-8503",
+        "HMS fisheries are managed under the Magnuson-Stevens Fishery Conservation and Management Act; implementing rules are at 50 CFR part 635",
+        "NMFS meets with the HMS Advisory Panel about twice each year"
+      ],
+      "species": [
+        "Swordfish",
+        "Bluefin tuna"
+      ],
+      "regions": [],
+      "open_questions": [
+        "The notice refers to \"sharks\" and \"billfish\" as broad groups without naming individual species, so no specific shark or billfish tags could be applied.",
+        "The notice covers Atlantic highly migratory species generally and does not identify specific management areas, so no region tag was applied. The Silver Spring, Maryland address is only the meeting venue.",
+        "The notice does not say what Executive Order 14276 covers or which HMS actions fall under it.",
+        "The draft agenda was not yet posted at the time of publication, so the full list of topics is not settled."
+      ]
+    },
+    {
+      "id": "2026-14708",
+      "title": "Agency Information Collection Activities; Submission to the Office of Management and Budget (OMB) for Review and Approval; Comment Request; Highly Migratory Species Tournament Registration and Reporting",
+      "type": "Notice",
+      "published": "2026-07-22",
+      "effective": "",
+      "url": "https://www.federalregister.gov/documents/2026/07/22/2026-14708/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for",
+      "what_changed": "The National Oceanic and Atmospheric Administration (NOAA) is sending a renewal of its Atlantic highly migratory species (HMS) tournament registration and reporting paperwork to the Office of Management and Budget (OMB) for review. The agency is also revising the forms: updating the target species list on the registration form, adding vessel effort reporting by in-state versus out-of-state participants, adding bluefin tuna catch reporting by size class, clarifying which species need individual lengths and weights in post-tournament catch reports, and adding questions about depredation of tournament catch by sharks, other fish, or marine animals. A new tournament operator survey is being added to cover operating costs, income sources, and participant descriptions. The public gets an extra 30 days to comment, after an earlier 60-day comment period that opened on December 19, 2025.",
+      "who_affected": "Operators of tournaments involving Atlantic highly migratory species, which the notice defines as Atlantic swordfish, sharks, billfish, and tunas. The notice lists the affected public as business or other for-profit organizations and not-for-profit institutions.",
+      "key_details": [
+        "OMB Control Number: 0648-0323",
+        "Type of request: revision and extension of a current information collection",
+        "Number of respondents: 300",
+        "Average hours per response: tournament registration 2 minutes; tournament summary report 20 minutes; operator survey 30 minutes",
+        "Total annual burden hours: 223",
+        "Existing rules have tournament operators register four weeks in advance and give contact information plus tournament dates, locations, and target species",
+        "If selected by the National Marine Fisheries Service (NMFS), operators submit an HMS tournament summary report within seven days after tournament fishing ends",
+        "Frequency: annually; on occasion. Respondent's obligation: mandatory",
+        "Legal authority: Magnuson-Stevens Fishery Conservation and Management Act (16 U.S.C. 1801 et seq.) and the Atlantic Tunas Convention Act of 1975 (16 U.S.C. 971 et seq.)",
+        "Comments are submitted at www.reginfo.gov/public/do/PRAMain within 30 days of publication",
+        "Earlier 60-day comment period was requested via the Federal Register on December 19, 2025"
+      ],
+      "species": [
+        "Swordfish",
+        "Bluefin tuna"
+      ],
+      "regions": [],
+      "open_questions": [
+        "The notice refers to Atlantic highly migratory species generally but does not name specific geographic management areas, so no region tag could be applied.",
+        "The notice groups species as 'sharks, billfish, and tunas' without listing individual species, so only swordfish and bluefin tuna could be tagged.",
+        "The updated target species list for the registration form is mentioned but its contents are not given in this notice.",
+        "Which species will require individual lengths and weights in post-tournament catch reports is not specified here.",
+        "The bluefin tuna size classes to be used in reporting are not defined in this text."
+      ]
+    },
+    {
+      "id": "2026-14697",
+      "title": "Fisheries of the Northeastern United States; Summer Flounder Fishery; Quota Transfer From North Carolina to Massachusetts",
+      "type": "Rule",
+      "published": "2026-07-21",
+      "effective": "2026-07-20",
+      "url": "https://www.federalregister.gov/documents/2026/07/21/2026-14697/fisheries-of-the-northeastern-united-states-summer-flounder-fishery-quota-transfer-from-north",
+      "what_changed": "North Carolina is giving part of its 2026 commercial summer flounder quota to Massachusetts. The transfer is 5,000 pounds (2,268 kilograms). The National Marine Fisheries Service (NMFS) announced the new 2026 quota totals for both states as a result. The transfer was requested to repay landings made by an out-of-state permitted vessel under a safe harbor agreement.",
+      "who_affected": "The notice names the commercial summer flounder fishery in North Carolina and Massachusetts. The summer flounder commercial quota is apportioned among coastal states from Maine through North Carolina.",
+      "key_details": [
+        "Amount transferred: 5,000 lb (2,268 kg) of summer flounder",
+        "Revised 2026 North Carolina quota: 2,902,006 lb (1,316,328 kg)",
+        "Revised 2026 Massachusetts quota: 1,046,297 lb (474,592 kg)",
+        "Action runs through December 31, 2026",
+        "Transfer made under mutual agreement between the two states, with concurrence of the NMFS Greater Atlantic Regional Administrator",
+        "Authority: 50 CFR 648.102(c)(2); regulations for the fishery at 50 CFR 648.100-648.111",
+        "Final 2026 allocations were published February 19, 2026 (91 FR 7896)",
+        "Reason given: to repay landings by an out-of-state permitted vessel under a safe harbor agreement",
+        "Regional Administrator found the three transfer criteria met: the overall annual quota can still be fully harvested, the transfer addresses an unforeseen variation or contingency, and it is consistent with the Fishery Management Plan and the Magnuson-Stevens Act"
+      ],
+      "species": [
+        "Summer flounder"
+      ],
+      "regions": [
+        "North Carolina",
+        "Massachusetts",
+        "Greater Atlantic",
+        "Mid-Atlantic"
+      ],
+      "open_questions": []
+    },
+    {
+      "id": "2026-14592",
+      "title": "Atlantic Highly Migratory Species; Atlantic Bluefin Tuna Fisheries; Closure of the Harpoon Category Fishery for 2026",
+      "type": "Rule",
+      "published": "2026-07-20",
+      "effective": "2026-07-17",
+      "url": "https://www.federalregister.gov/documents/2026/07/20/2026-14592/atlantic-highly-migratory-species-atlantic-bluefin-tuna-fisheries-closure-of-the-harpoon-category",
+      "what_changed": "The National Marine Fisheries Service (NMFS) closed the Harpoon category fishery for large medium and giant Atlantic bluefin tuna for the rest of the 2026 fishing year. NMFS says reported Harpoon landings reached about 72.8 metric tons, above the adjusted Harpoon quota of 65.6 metric tons. The Harpoon season normally runs June 1 through November 15; this closure ends it early for 2026. NMFS says it may reopen the fishery if it later finds reasonable fishing opportunities, and the category reopens automatically on June 1, 2027.",
+      "who_affected": "Vessels holding an Atlantic Tunas Harpoon category (commercial) permit. Bluefin tuna dealers are also mentioned in connection with existing landing report timelines.",
+      "key_details": [
+        "Applies to large medium and giant bluefin tuna: 73 inches (185 cm) curved fork length or greater",
+        "Closure runs through December 31, 2026",
+        "Harpoon category baseline quota: 59.2 metric tons; adjusted on July 14, 2026 to 65.6 metric tons",
+        "Reported Harpoon category landings to date: about 72.8 metric tons",
+        "Current baseline U.S. bluefin tuna quota: 1,316.14 metric tons, not counting 25 metric tons allocated for pelagic longline bycatch in the Northeast Distant Gear Restricted Area",
+        "Harpoon category quota period is June 1 through November 15 each year",
+        "A separate proposed rule (published May 7, 2026) would raise the U.S. baseline quota from 1,316.14 to 1,509.98 metric tons and the Harpoon baseline from 59.2 to 67.9 metric tons; its comment period closed June 8, 2026",
+        "NMFS cited existing rules requiring dealers to report landings within 24 hours and Harpoon vessel owners to report catch within 24 hours of landing or trip end",
+        "NMFS waived prior public comment and the 30-day delay, citing the ongoing season and the exceeded quota"
+      ],
+      "species": [
+        "Bluefin tuna"
+      ],
+      "regions": [
+        "Atlantic Ocean",
+        "Greater Atlantic"
+      ],
+      "open_questions": [
+        "The notice does not describe the geographic boundaries of the closure beyond the Atlantic bluefin tuna fishery managed under 50 CFR part 635.",
+        "The notice does not say what happens to the overharvest of roughly 7.2 metric tons beyond noting it could lead to future quota reductions."
+      ]
+    },
+    {
+      "id": "2026-14369",
+      "title": "Fisheries of the Northeastern United States; Summer Flounder Fishery; Quota Transfer From North Carolina to Virginia",
+      "type": "Rule",
+      "published": "2026-07-16",
+      "effective": "2026-07-15",
+      "url": "https://www.federalregister.gov/documents/2026/07/16/2026-14369/fisheries-of-the-northeastern-united-states-summer-flounder-fishery-quota-transfer-from-north",
+      "what_changed": "North Carolina moved part of its 2026 commercial summer flounder quota to Virginia. The National Marine Fisheries Service (NMFS) approved the swap and published the new 2026 quota numbers for both states. The transfer was requested to repay landings made by out-of-state permitted vessels under safe harbor agreements. North Carolina's 2026 commercial quota goes down by the transferred amount and Virginia's goes up by the same amount.",
+      "who_affected": "The commercial summer flounder fishery in North Carolina and Virginia, and the two state governments that agreed to the transfer.",
+      "key_details": [
+        "Amount transferred: 12,719 pounds (5,769 kilograms) of summer flounder",
+        "Revised 2026 North Carolina commercial quota: 2,907,006 lb (1,318,596 kg)",
+        "Revised 2026 Virginia commercial quota: 2,433,727 lb (1,103,920 kg)",
+        "Action runs through December 31, 2026",
+        "Reason given: repayment of landings by out-of-state permitted vessels under safe harbor agreements",
+        "Transfers are allowed under 50 CFR 648.102(c)(2); the Regional Administrator found all three required criteria were met",
+        "Original 2026 allocations were published February 19, 2026 (91 FR 7896)",
+        "Summer flounder rules are at 50 CFR 648.100 through 648.111"
+      ],
+      "species": [
+        "Summer flounder"
+      ],
+      "regions": [
+        "North Carolina",
+        "Virginia",
+        "Mid-Atlantic",
+        "Greater Atlantic"
+      ],
+      "open_questions": []
+    },
+    {
+      "id": "2026-14366",
+      "title": "Atlantic Highly Migratory Species; Atlantic Bluefin Tuna Fisheries; Harpoon Category Quota Transfer",
+      "type": "Rule",
+      "published": "2026-07-16",
+      "effective": "2026-07-14",
+      "url": "https://www.federalregister.gov/documents/2026/07/16/2026-14366/atlantic-highly-migratory-species-atlantic-bluefin-tuna-fisheries-harpoon-category-quota-transfer",
+      "what_changed": "The National Marine Fisheries Service (NMFS) moved 6.4 metric tons (mt) of Atlantic bluefin tuna quota from the Reserve category to the Harpoon category. That raises the Harpoon category quota for 2026 from its baseline of 59.2 mt to 65.6 mt, and drops the Reserve category from 7.4 mt to 1 mt. NMFS says the Harpoon category had already landed about 63.1 mt, so the category was on track to run out of quota. The notice states the Harpoon category fishery will stay open until November 15, 2026, or until the adjusted quota is reached, whichever comes first.",
+      "who_affected": "Vessels holding an Atlantic Tunas Harpoon category (commercial) permit fishing for Atlantic bluefin tuna. Bluefin tuna dealers are also mentioned in the notice's reporting discussion.",
+      "key_details": [
+        "6.4 mt transferred from the Reserve category to the Harpoon category",
+        "Adjusted Harpoon category quota: 65.6 mt (59.2 mt baseline + 6.4 mt)",
+        "Adjusted Reserve category quota: 1 mt (7.4 mt - 6.4 mt)",
+        "Baseline U.S. bluefin tuna quota: 1,316.14 mt, not counting 25 mt allocated for pelagic longline bycatch in the Northeast Distant Gear Restricted Area",
+        "Baseline category quotas: Harpoon 59.2 mt, Reserve 38.2 mt",
+        "Preliminary landings to date in the Harpoon category: about 63.1 mt",
+        "Harpoon category quota is available June 1 through November 15 each year",
+        "Harpoon category fishery open until November 15, 2026, or until the adjusted quota is reached",
+        "Dealers report landings within 24 hours of receiving bluefin tuna (50 CFR 635.5(b)(2)(i)(A))",
+        "Harpoon category vessel owners report bluefin tuna retained or discarded dead within 24 hours of landing or trip end, via hmspermits.noaa.gov, the HMS Catch Reporting app, or 888-872-8862",
+        "Issued as a temporary rule; NMFS waived prior public comment and the 30-day delay in effective date",
+        "Separate proposed rule (91 FR 24789) would raise the baseline U.S. quota to 1,509.98 mt, Harpoon baseline to 67.9 mt and Reserve baseline to 43.8 mt; comment period closed June 8, 2026"
+      ],
+      "species": [
+        "Bluefin tuna"
+      ],
+      "regions": [
+        "Atlantic Ocean",
+        "Greater Atlantic"
+      ],
+      "open_questions": []
+    },
+    {
+      "id": "2026-14363",
+      "title": "Request for Information on Ropeless Fishing; Fisheries of the Northeastern United States and Atlantic Coastal Fisheries Cooperative Management",
+      "type": "Notice",
+      "published": "2026-07-16",
+      "effective": "",
+      "url": "https://www.federalregister.gov/documents/2026/07/16/2026-14363/request-for-information-on-ropeless-fishing-fisheries-of-the-northeastern-united-states-and-atlantic",
+      "what_changed": "The National Marine Fisheries Service (NMFS) published a request for information, not a rule. It is asking fishermen and others with specialized knowledge for input on \"ropeless\" fishing gear, meaning fixed gear that does not use persistent buoy lines. The notice lays out 52 questions across topics like gear authorization, crew safety, reliability standards, digital gear marking, gear conflict, equity, training, law enforcement, and data governance. NMFS says it plans to summarize the responses and post that summary publicly.",
+      "who_affected": "The notice names fixed-gear fisheries in the Greater Atlantic Region, including trap/pot and gillnet gear, and specifically the American lobster and Jonah crab fisheries plus Council-managed fixed-gear fisheries. It also invites input from gear manufacturers, mobile-gear vessels, other ocean users, state agencies, and anyone with experience using this gear outside the Greater Atlantic Region.",
+      "key_details": [
+        "Responses are due on or before October 14, 2026",
+        "Docket identifier NOAA-NMFS-2026-2080, submitted through regulations.gov; anonymous comments accepted",
+        "Contact: Caroline Potter, Fisheries Resource Management Specialist, (978) 281-9325",
+        "Driven by the Consolidated Appropriations Act, 2023, which requires new American lobster and Jonah crab regulations to take effect by December 31, 2028, and additional whale protection measures by the same date",
+        "Current rules in 50 CFR part 648 (Council-managed fisheries) and part 697 (lobster/Jonah crab) require physical surface markers on all fixed gear — buoy or high flyer with radar reflector or pennant",
+        "In 2021 NMFS amended the Atlantic Large Whale Take Reduction Plan (86 FR 51970, September 17, 2021) to restrict persistent buoy lines in high-risk entanglement areas at certain times of year",
+        "Northeast Fisheries Science Center exempted fishing permit (EFP) trials from summer 2020 to early 2026 showed an on-demand gear retrieval success rate of over 91 percent",
+        "Fewer than 1 in 600 hauls led to loss of an on-demand device — a 99.8 percent device recovery rate",
+        "No documented safety incidents during Northeast Fisheries Science Center on-demand trials",
+        "Four listed options for sharing gear-location data at sea: curated by a data aggregator, filtered onboard by GPS, criteria-based access, or fully public",
+        "Two organizations currently act as data aggregators in the Greater Atlantic Region",
+        "Two supporting reports are posted online: the MITRE Corporation's \"Evaluation of On-Demand Gear Acoustic Interoperability Approaches in the Northeast U.S.\" and the Northeast Fisheries Science Center's \"A Proposal for Functional Data Specifications of On-Demand Fishing Gear, Version 2\" (Galvez, 2026)",
+        "The 2025 Joint Omnibus Alternative Gear-Marking Framework Adjustment by the New England and Mid-Atlantic Fishery Management Councils was postponed pending more stakeholder input; NMFS postponed its parallel lobster/Jonah crab action",
+        "The notice states it does not request comment on the number, size, location, or seasonality of any existing or future whale protection areas",
+        "Definitions provided for grappling, interoperability, retrieval mechanism, on-demand device/gear/system, one-end ropeless, ropeless fishing gear, ropeless system, timed-retrieval device/gear/system, and persistent buoy line"
+      ],
+      "species": [
+        "American lobster",
+        "Jonah crab"
+      ],
+      "regions": [
+        "Greater Atlantic",
+        "New England",
+        "Mid-Atlantic",
+        "Federal waters"
+      ],
+      "open_questions": [
+        "The notice repeatedly names North Atlantic right whales and other large whales, but no marine mammal tags exist in the allowed species list, so they are not tagged.",
+        "The notice refers generally to gillnet and trap/pot fixed-gear fisheries beyond lobster and Jonah crab without naming the specific finfish or shellfish stocks involved, so no further species tags could be assigned.",
+        "The notice gives no timeline for when NMFS will publish the promised public summary of responses.",
+        "Whether and when the postponed Council framework adjustment or the parallel lobster/Jonah crab gear-marking action will resume is not stated."
+      ]
+    },
+    {
+      "id": "2026-13867",
+      "title": "Fisheries of the Northeastern United States; 2026 Chub Mackerel, Squid, and Butterfish Fishery Specifications",
+      "type": "Rule",
+      "published": "2026-07-09",
+      "effective": "2026-08-10",
+      "url": "https://www.federalregister.gov/documents/2026/07/09/2026-13867/fisheries-of-the-northeastern-united-states-2026-chub-mackerel-squid-and-butterfish-fishery",
+      "what_changed": "The National Marine Fisheries Service (NMFS) finalized the 2026 catch specifications for the Mackerel, Squid, and Butterfish Fishery Management Plan (FMP), as recommended by the Mid-Atlantic Fishery Management Council. For chub mackerel and Illex squid, the 2026 numbers are unchanged from the 2025 rollover levels, and the same numbers are projected for 2027 and 2028. Longfin squid 2026 numbers were reaffirmed unchanged as well. Butterfish is the one real change: most 2026 butterfish numbers are lower than 2025, with the acceptable biological catch (ABC), annual catch limit (ACL), and annual catch target (ACT) down 19 percent and domestic annual harvest (DAH) down 29 percent. Atlantic mackerel was handled in a separate action, Framework Adjustment 17, and is not set by this rule.",
+      "who_affected": "Commercial fisheries for chub mackerel, Illex squid, longfin squid, and butterfish managed under the Mackerel, Squid, and Butterfish FMP in the Northeastern United States, overseen by the Mid-Atlantic Fishery Management Council and the NMFS Greater Atlantic Regional Fisheries Office.",
+      "key_details": [
+        "Chub mackerel 2026 and projected 2027-2028: ABC 2,300 metric tons (mt); ACL 2,262 mt; ACT 2,171 mt; total allowable landings 2,041 mt — same as 2025.",
+        "Illex squid 2026 and projected 2027-2028: ABC 40,000 mt; commercial discard set-aside 1,369 mt (3.42 percent); initial optimum yield 38,631 mt; DAH/domestic annual processing 38,631 mt — same as 2025. Overfishing limit listed as Unknown.",
+        "Longfin squid reaffirmed 2026: ABC 23,400 mt; commercial discard set-aside 506.3 mt (2.16 percent); initial optimum yield and DAH/DAP 22,893.7 mt. Overfishing limit listed as Unknown.",
+        "Longfin squid 2026 trimester quota split: Trimester I (January-April) 43 percent, 9,844.3 mt; Trimester II (May-August) 17 percent, 3,891.9 mt; Trimester III (September-December) 40 percent, 9,157.5 mt.",
+        "Butterfish reaffirmed 2026: overfishing limit 14,224 mt (down from 17,587 mt); ABC/ACL 13,842 mt (down from 17,115 mt); ACT 13,842 mt; DAH/DAP 8,051 mt (down from 11,324 mt); closure threshold 7,051 mt (down from 10,324 mt).",
+        "Butterfish cap in the longfin squid fishery stays at 3,884 mt, split by trimester: 1,670 mt (January-April), 660 mt (May-August), 1,554 mt (September-December).",
+        "Assumed other butterfish discards 1,907 mt; total discard set-aside from all sources 5,791 mt.",
+        "Research set-aside is 0 for all four species; the Council's research set-aside program has been suspended since 2014.",
+        "NMFS states that during 2019-2024 only 6.2-24.5 percent of the butterfish DAH and 16.8-32.3 percent of the ACL was harvested each year, with landings of 718 to 3,442 mt and catch of 3,874 to 5,394 mt.",
+        "The FMP supported commercial fisheries producing $45.2 million in revenue in 2024, the most recent year with complete data.",
+        "One public comment was received on the proposed rule; it did not address the measures. There are no changes from the proposed rule."
+      ],
+      "species": [
+        "Chub mackerel",
+        "Illex squid",
+        "Longfin squid",
+        "Butterfish",
+        "Atlantic mackerel"
+      ],
+      "regions": [
+        "Mid-Atlantic",
+        "Greater Atlantic",
+        "New England"
+      ],
+      "open_questions": [
+        "The notice does not explain why the butterfish overfishing limit and ABC dropped (for example, a new stock assessment). A reviewer may want the proposed rule (91 FR 12545) for that background.",
+        "The notice does not describe the geographic boundaries of these fisheries, so the region tags are inferred from the Mid-Atlantic Fishery Management Council and Greater Atlantic Regional Fisheries Office references rather than stated areas.",
+        "The document does not spell out how the butterfish mortality cap in the longfin squid fishery or the closure threshold operate in practice."
+      ]
+    },
+    {
+      "id": "2026-13809",
+      "title": "Fisheries of the Northeastern United States; Omnibus Management Flexibility Amendment to New England Fishery Management Council Fishery Management Plans",
+      "type": "Proposed Rule",
+      "published": "2026-07-08",
+      "effective": "",
+      "url": "https://www.federalregister.gov/documents/2026/07/08/2026-13809/fisheries-of-the-northeastern-united-states-omnibus-management-flexibility-amendment-to-new-england",
+      "what_changed": "The National Marine Fisheries Service (NMFS) has proposed a rule to put in place the New England Fishery Management Council's Omnibus Management Flexibility Amendment. The proposal would change how often catch specifications are set, letting the Council recommend specifications covering one to five years across all of its fishery management plans (FMPs) instead of the current mix of two-year and three-year cycles. It would create a defined specifications process for the Northeast Multispecies and Monkfish FMPs, which now have to use framework adjustments or amendments, and would extend in-season adjustment authority (already in the Atlantic Herring FMP) to all the Council's FMPs. It would also drop required annual plan development team reviews in the Monkfish and Northeast Skate Complex FMPs and the annual review and report for the small-mesh part of the Northeast Multispecies FMP. NMFS describes the action as administrative and says it would not change current operational fishing rules.",
+      "who_affected": "The proposal covers the New England Council's FMPs: Northeast Multispecies (large-mesh and small-mesh), Atlantic Sea Scallop, Monkfish, Atlantic Herring, Northeast Skate Complex, and Red Crab, off the New England and Mid-Atlantic coasts. The Mid-Atlantic Fishery Management Council acted on the monkfish parts because Monkfish is jointly managed.",
+      "key_details": [
+        "Comments must be received by August 7, 2026; docket NOAA-NMFS-2026-0067",
+        "NMFS and the Council manage 27 species under nine FMPs off the New England and Mid-Atlantic coasts",
+        "Current specification cycles: groundfish every 3 years; scallop up to 2 years with default measures; herring 3 years; skate up to 2 fishing years; small-mesh multispecies at least every 3 years; monkfish multi-year as needed; red crab no set frequency",
+        "Proposed change would allow specifications for one to up to five years across all Council FMPs",
+        "Northeast Multispecies specifications could include overfishing limits (OFL), acceptable biological catch (ABC), sub-annual catch limits (sub-ACL), sub-components, U.S./Canada total allowable catches, status determination criteria, management uncertainty buffers, recreational bag limits, seasons and fish size, common pool trimester TAC distributions, and creation of a new sector",
+        "Monkfish specifications could include OFLs, ABCs, annual catch limits (ACL), annual catch targets (ACT), total allowable landings, status determination criteria, Research Set-Aside allocations and effort controls, accountability measures, commercial days-at-sea, minimum fish size, trip limits, seasons, declared time out of the fishery, landing ratios such as liver-to-monkfish and tail-to-whole conversions, and recreational possession limits, minimum fish size and seasons",
+        "Status determination criteria would be added to the measures adjustable through the Northeast Skate Complex specifications process or framework adjustment",
+        "Scallop plan development team would meet at least every 2 years; if specifications are set for 1 or 2 years, default specifications would apply in the following year",
+        "Atlantic Herring plan development team would still meet at least every 3 years, no later than July of the year before new specifications take effect, and prepare a Stock Assessment and Fishery Evaluation report at least every 3 years",
+        "Skate annual catch target would remain set at less than or equal to 90 percent of the annual catch limit; skate fishing year runs May 1-April 30",
+        "In-season adjustments by NMFS would follow consultation with the Council and the Administrative Procedure Act",
+        "The Council developed the Amendment in response to Executive Order 14276, Restoring American Seafood Competitiveness; the Council voted to submit it in September 2025 and the Mid-Atlantic Council acted on monkfish measures in October 2025",
+        "NMFS certified the rule would not have a significant economic impact on a substantial number of small entities, so no initial regulatory flexibility analysis was prepared"
+      ],
+      "species": [
+        "Atlantic sea scallop",
+        "Monkfish",
+        "Atlantic herring",
+        "Atlantic deep-sea red crab"
+      ],
+      "regions": [
+        "New England",
+        "Mid-Atlantic",
+        "Federal waters"
+      ],
+      "open_questions": [
+        "The notice refers to the Northeast Multispecies (groundfish), small-mesh multispecies, and Northeast Skate Complex FMPs without listing the individual stocks covered, so those species are not tagged here. A reviewer should confirm which stocks should be tagged.",
+        "The notice says 27 species are managed under nine FMPs but names only seven FMPs in the proposed measures; it is not clear whether the remaining Council FMPs are affected.",
+        "The text does not state an effective date or when the Council would first use the new 1-to-5-year specification cycle for any given FMP."
+      ]
+    },
+    {
+      "id": "2026-13630",
+      "title": "Atlantic Highly Migratory Species; Atlantic Bluefin Tuna Fisheries; Closure of the Angling Category Southern New England Area Trophy Fishery for 2026",
+      "type": "Rule",
+      "published": "2026-07-06",
+      "effective": "2026-07-03",
+      "url": "https://www.federalregister.gov/documents/2026/07/06/2026-13630/atlantic-highly-migratory-species-atlantic-bluefin-tuna-fisheries-closure-of-the-angling-category",
+      "what_changed": "The National Marine Fisheries Service (NMFS) closed the Angling category \"trophy\" Atlantic bluefin tuna fishery in the Southern New England area for the rest of 2026. NMFS says landings data show the 2.3 metric ton subquota for that area has been reached and exceeded. Trophy fish are large medium and giant bluefin measuring 73 inches (185 centimeters) curved fork length or greater. The trophy fishery in the Gulf of Maine area stays open, and the notice states that catch-and-release and tag-and-release fishing for bluefin of all sizes continues under the programs at 50 CFR 635.26. The closure runs through December 31, 2026.",
+      "who_affected": "Vessels with Highly Migratory Species (HMS) Angling permits and HMS Charter/Headboat permits when fishing recreationally for bluefin tuna. It applies in the Southern New England trophy area, defined as south of latitude 42\\u00b0 N and north of latitude 39\\u00b018' N.",
+      "key_details": [
+        "Trophy bluefin tuna = 73 inches (185 cm) curved fork length or greater",
+        "Southern New England area trophy subquota: 2.3 metric tons (mt), which NMFS determined has been reached and exceeded",
+        "Closure period runs through December 31, 2026",
+        "Southern New England trophy area: south of lat. 42\\u00b0 N and north of lat. 39\\u00b018' N",
+        "Angling category baseline quota: 297.4 mt; 9.2 mt (3.1 percent) sub-allocated to trophy bluefin, split 2.3 mt to each of four areas (Gulf of Maine, Southern New England, southern area, Gulf of America)",
+        "Current baseline U.S. bluefin quota: 1,316.14 mt, not counting 25 mt tied to the Northeast Distant Gear Restricted Area",
+        "Gulf of Maine area trophy fishery remains open",
+        "A separate proposed rule (91 FR 24789, May 7, 2026) would raise the U.S. baseline quota to 1,509.98 mt, the Angling category quota to 341.3 mt, and each trophy area subquota to 2.6 mt; its comment period closed June 8, 2026",
+        "NMFS skipped advance public comment and the 30-day delay, citing good cause under 5 U.S.C. 553",
+        "Reporting of bluefin retained or discarded dead is required within 24 hours via hmspermits.noaa.gov, the HMS Catch Reporting app, or (888) 872-8862"
+      ],
+      "species": [
+        "Bluefin tuna"
+      ],
+      "regions": [
+        "Southern New England",
+        "New England",
+        "Gulf of Maine",
+        "Atlantic Ocean",
+        "Greater Atlantic"
+      ],
+      "open_questions": [
+        "The notice does not state the status of the southern area or Gulf of America trophy subquotas, only that the Gulf of Maine area remains open.",
+        "The notice does not say by how much the 2.3 mt Southern New England subquota was exceeded.",
+        "It is not stated whether or how a final rule implementing ICCAT Recommendation 25-05 would affect this closure if the Southern New England subquota rises to 2.6 mt."
+      ]
+    },
+    {
+      "id": "2026-13153",
+      "title": "Magnuson-Stevens Fishery Conservation and Management Act Provisions; Fisheries of the Northeastern United States; Northeast Multispecies Fishery; Amendment 25 (Revised)",
+      "type": "Rule",
+      "published": "2026-06-30",
+      "effective": "2026-06-30",
+      "url": "https://www.federalregister.gov/documents/2026/06/30/2026-13153/magnuson-stevens-fishery-conservation-and-management-act-provisions-fisheries-of-the-northeastern",
+      "what_changed": "The National Marine Fisheries Service (NMFS) split Atlantic cod into four stocks instead of two. Instead of Gulf of Maine (GOM) cod and Georges Bank (GB) cod, the Northeast Multispecies Fishery Management Plan (FMP) now uses Eastern Gulf of Maine (EGOM), Western Gulf of Maine (WGOM), Georges Bank, and Southern New England (SNE) cod. The rule writes the new stock boundaries into the regulations and sets status determination criteria, catch limits, sector and common pool allocations, trimester catch areas, common pool trip limits, and recreational seasons, sizes, and bag limits for each of the four stocks. It replaces the default 2026 cod quotas, which had been set at 75 percent of the 2025 levels for the old two stocks. One thing changed from the proposed rule: the May recreational season for WGOM cod was dropped, leaving a September-October season.",
+      "who_affected": "Commercial groundfish vessels in the Northeast multispecies fishery, both sector and common pool, plus recreational charter/party boats and private anglers fishing for cod. The rule also touches the Atlantic sea scallop, small-mesh multispecies, Atlantic herring, and large-mesh non-groundfish fisheries that overlap with groundfish.",
+      "key_details": [
+        "Four new cod stock units: EGOM, WGOM, GB, SNE, based on the 2023 Research Track Assessment of Atlantic Cod",
+        "2026 acceptable biological catch (ABC): EGOM cod 39 metric tons (mt), WGOM cod 460 mt, GB cod 106 mt, SNE cod 36 mt",
+        "2027 ABC: EGOM cod 30 mt, WGOM cod 586 mt, SNE cod 36 mt; no 2027 limits set for GB cod",
+        "2026 total annual catch limits (ACL): EGOM cod 37 mt, WGOM cod 436 mt, GB cod 101 mt, SNE cod 34 mt",
+        "If Framework 72 is approved, the 2026 GB cod overfishing limit would become 473 mt and the ABC 151 mt",
+        "Recreational sub-ACL set at 27.5 percent of the WGOM cod ABC; 73.5 percent of the SNE cod ABC after state and other federal catch is deducted",
+        "Recreational measures for WGOM, GB, and EGOM cod: 1 fish possession limit, 23-inch (58.4 cm) minimum size, open season September 1-October 31",
+        "SNE cod recreational: no retention, closed all year, for both charter/party and private anglers",
+        "Common pool trip limits: EGOM cod 25 lb (11 kg) per day-at-sea up to 50 lb (23 kg) per trip; WGOM cod 50 lb (23 kg) per day-at-sea up to 100 lb (45 kg) per trip; GB cod 25 lb per day-at-sea up to 50 lb per trip; SNE cod 0 lb, possession prohibited",
+        "WGOM cod commercial groundfish sub-ACL split 68 percent northern portion and 32 percent southern portion, using old GOM and GB cod potential sector contributions (PSC) respectively",
+        "Management uncertainty buffers: 7 percent on recreational sub-ACLs, 5 percent on commercial sub-ACLs, including 5 percent for GB cod",
+        "Sectors may not carry over unused 2025 GOM or GB cod quota into fishing year 2026; normal carryover rules return in 2027",
+        "Trimester total allowable catch (TAC) splits: EGOM cod 80/10/10, WGOM cod 55/22/23, GB cod 33/33/34, SNE cod 36/31/33 percent",
+        "Trimester TAC closure areas by statistical area: EGOM 512; WGOM 513, 514, 521; GB 522, 561; SNE 537, 539, 613",
+        "Numerical status determination criteria used a Woods Hole Assessment Model: EGOM biomass proxy 2,184 mt, WGOM 62,677 mt, GB 8,290 mt, SNE 11,258 mt",
+        "NMFS received 261 comments on the notice of availability and 14 on the proposed rule",
+        "Action predicted to generate $34.7 million in gross revenue for sector commercial groundfish trips, about $7.0 million less than fishing year 2023"
+      ],
+      "species": [
+        "Atlantic cod",
+        "Haddock",
+        "Atlantic sea scallop",
+        "Atlantic herring"
+      ],
+      "regions": [
+        "Eastern Gulf of Maine",
+        "Western Gulf of Maine",
+        "Georges Bank",
+        "Southern New England",
+        "Gulf of Maine",
+        "New England",
+        "Greater Atlantic",
+        "Federal waters"
+      ],
+      "open_questions": [
+        "The preamble and Table 14 say the WGOM, GB, and EGOM cod recreational season is September 1-October 31 with no May opening, but the regulatory text at Table 3 to Paragraph (c)(2) still lists 'May 1-May 31; September 1-October 31' for those stocks. A reviewer should confirm which table applies to which recreational component and whether the May dates are an error.",
+        "Framework 72 had been submitted to NMFS but its approval status is not stated, so it is not clear whether the higher GB cod limits will take effect.",
+        "The full sector-by-sector allocation table (Table 6) is reproduced as a dense number grid; individual sector allocations should be verified against the original document formatting."
+      ]
+    }
+  ]
+}

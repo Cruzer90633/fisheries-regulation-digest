@@ -23,7 +23,7 @@ operate, free hosting. Filtering and search run in the browser.
 ```
 fetch  →  summarize  →  review  →  build
  │           │            │          │
- │           │            │          └─ writes outputs/site/
+ │           │            │          └─ writes docs/
  │           │            └─ human approves, status: approved
  │           └─ Claude drafts, status: summarized
  └─ Federal Register API, status: new
@@ -40,7 +40,7 @@ Status moves one way. Nothing reaches the site without `approved`.
 | `app/store.py` | SQLite schema and all queries |
 | `app/tagging.py` | Species/region tags from the controlled vocabularies |
 | `app/summarize.py` | Claude call with a strict JSON schema |
-| `app/build_site.py` | Static HTML generation |
+| `app/build_site.py` | Static HTML generation into `docs/` |
 | `app/cli.py` | `fetch`, `summarize`, `review`, `build`, `status`, `run` |
 
 ## Accuracy controls

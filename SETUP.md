@@ -54,7 +54,7 @@ python -m app.cli review
 python -m app.cli build
 ```
 
-Then open `outputs/site/index.html`.
+Then open `docs/index.html`.
 
 `python -m app.cli status` shows where everything stands at any point.
 
@@ -71,4 +71,5 @@ python -m unittest discover tests
 - Start with `--limit 3` on your first `summarize` run. Read what comes back before
   spending money on a full batch.
 - The database is `app/data/digest.db`. Back it up — it holds every approved summary.
-- `outputs/site/` is regenerated on every `build`. Do not edit it by hand.
+- `docs/` is regenerated on every `build`. Do not edit it by hand. It is the
+  folder GitHub Pages publishes.

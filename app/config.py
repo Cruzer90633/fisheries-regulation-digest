@@ -13,7 +13,11 @@ RESOURCES_DIR = ROOT / "resources"
 SPECIES_LIST = RESOURCES_DIR / "species-list.md"
 REGION_LIST = RESOURCES_DIR / "region-list.md"
 
-SITE_DIR = ROOT / "outputs" / "site"
+# GitHub Pages serves from the repository root or a folder named "docs" — those are
+# the only two choices it offers. So the generated site goes to docs/ rather than
+# under outputs/, even though it is generated output. This folder is committed; it
+# is what the public actually reads.
+SITE_DIR = ROOT / "docs"
 
 # --- Federal Register API ------------------------------------------------
 # Verified working 2026-09-20. See resources/source-registry.md.

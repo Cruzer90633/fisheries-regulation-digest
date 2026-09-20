@@ -2,6 +2,11 @@ __pycache__/
 *.pyc
 .venv/
 venv/
-app/data/*.db
-outputs/site/
 .env
+
+# Deliberately NOT ignored:
+#
+#   docs/              the generated site — GitHub Pages serves it, so it must be
+#                      committed or the published page is empty
+#   app/data/digest.db every summary and every approval you have made. Committing
+#                      it is the backup. Losing it means redoing the review work.

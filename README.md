@@ -23,7 +23,7 @@ subscribing to mailing lists.
 ```
 fetch  →  summarize  →  review  →  build
  │          │             │          │
- │          │             │          └─ outputs/site/index.html
+ │          │             │          └─ docs/index.html
  │          │             └─ you approve; nothing publishes without this
  │          └─ Claude drafts against a fixed JSON schema
  └─ Federal Register API
@@ -48,7 +48,8 @@ python -m app.cli build
 | `app/` | The pipeline: fetch, summarize, review, build |
 | `tests/` | Unit tests (no network, no API calls) |
 | `workflows/` | Workflow instructions, agent definitions, process documents |
-| `outputs/` | Completed work and generated deliverables, including `site/` |
+| `docs/` | The generated public site (GitHub Pages serves this folder) |
+| `outputs/` | Completed work and generated deliverables |
 | `resources/` | Reference material, source documents, examples, research |
 | `drafts/` | Work in progress and temporary files |
 | `templates/` | Reusable templates and frameworks |
