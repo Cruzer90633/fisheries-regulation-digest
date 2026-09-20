@@ -83,7 +83,7 @@ FR_PER_PAGE = 100
 #
 # A contact email would also be acceptable here, but a repository URL keeps a
 # personal address out of federal server logs.
-PROJECT_URL = ""
+PROJECT_URL = "https://github.com/Cruzer90633/fisheries-regulation-digest"
 
 
 def user_agent() -> str:
