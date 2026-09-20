@@ -1,8 +1,33 @@
 # Fisheries Regulation Digest
 
+**Live at [cruzer90633.github.io/fisheries-regulation-digest](https://cruzer90633.github.io/fisheries-regulation-digest/)**
+
 Plain-English summaries of fishery regulation updates from the Mid-Atlantic Fishery
 Management Council (MAFMC) and NOAA Fisheries Greater Atlantic Regional Fisheries
 Office (GARFO).
+
+## The weekly rhythm
+
+**Monday 07:00 UTC** — the `Weekly fetch and summarize` Action pulls new Federal
+Register notices and drafts summaries. It commits them and stops. It never publishes.
+
+**You, whenever it suits** — `git pull`, then review, build, commit, push. The live
+site updates a minute or two later.
+
+```
+git pull
+.venv\Scripts\python.exe -m app.cli review
+.venv\Scripts\python.exe -m app.cli build
+git add . && git commit -m "New summaries" && git push
+```
+
+Two things that will bite you otherwise:
+
+- **Always `git pull` first.** The Monday Action writes to the same
+  `app/data/digest.db`, and Git cannot merge two versions of a SQLite file.
+- **Batch any vocabulary edits before a review session.** Changing
+  `resources/species-list.md` or `region-list.md` means re-running affected
+  summaries, and a re-run drops them back to unapproved.
 
 The goal: let students, industry members, and the public find out when a rule affects
 a species or region they care about, without reading dense regulatory PDFs or

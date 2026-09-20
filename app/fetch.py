@@ -142,27 +142,43 @@ def fetch_notices(days_back: int = 60, max_pages: int = 10) -> list[dict]:
     """
     since = date.today() - timedelta(days=days_back)
     merged: dict[str, dict] = {}
+    programs: dict[str, list[str]] = {}
     overlaps = 0
 
-    def absorb(results: list[dict], label: str) -> None:
+    def absorb(results: list[dict], label: str, query_key: str) -> None:
+        """Merge one query's results, recording which program the query represents."""
         nonlocal overlaps
+        program = config.PROGRAM_LABELS.get(query_key)
         new_here = 0
+
         for result in results:
             document_number = result.get("document_number")
             if not document_number:
                 continue
+
+            if program:
+                seen = programs.setdefault(document_number, [])
+                if program not in seen:
+                    seen.append(program)
+
             if document_number in merged:
                 overlaps += 1
                 continue
             merged[document_number] = result
             new_here += 1
+
         log.info("%s: %d result(s), %d new.", label, len(results), new_here)
 
     for cfr_part, description in config.FR_CFR_PARTS.items():
-        absorb(_fetch_part(cfr_part, since, max_pages), f"50 CFR {cfr_part} — {description}")
+        absorb(_fetch_part(cfr_part, since, max_pages),
+               f"50 CFR {cfr_part} — {description}", cfr_part)
 
     for term in config.FR_TITLE_TERMS:
-        absorb(_fetch_term(term, since, max_pages), f"title {term}")
+        absorb(_fetch_term(term, since, max_pages), f"title {term}", term)
+
+    # Attach provenance to each result so normalize() can carry it to the store.
+    for document_number, result in merged.items():
+        result["_programs"] = sorted(programs.get(document_number, []))
 
     if overlaps:
         log.info("%d result(s) matched more than one query and were merged.", overlaps)
@@ -192,5 +208,6 @@ def normalize(raw: dict) -> dict:
         "abstract": (raw.get("abstract") or "").strip(),
         "agency": agency_names,
         "body_html_url": raw.get("body_html_url") or "",
+        "programs": raw.get("_programs") or [],
         "raw_json": json.dumps(raw, sort_keys=True),
     }

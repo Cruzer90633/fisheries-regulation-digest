@@ -63,6 +63,11 @@
     "Proposed Rule",
     "Rule"
   ],
+  "programs": [
+    "Atlantic Coastal",
+    "Greater Atlantic",
+    "Highly Migratory Species"
+  ],
   "notices": [
     {
       "id": "2026-18629",
@@ -104,6 +109,9 @@
         "The number of trips, trip duration, total days, and number and duration of sets are listed only as \"See Project Narrative\" in the project summary table; the narrative does not state these figures directly.",
         "The notice does not say which finfish species the participating gillnet vessels would target or land.",
         "The notice does not state whether or when NMFS will approve the EFP, or an effective date for the permit itself."
+      ],
+      "programs": [
+        "Atlantic Coastal"
       ]
     },
     {
@@ -133,7 +141,10 @@
         "Mid-Atlantic",
         "Greater Atlantic"
       ],
-      "open_questions": []
+      "open_questions": [],
+      "programs": [
+        "Greater Atlantic"
+      ]
     },
     {
       "id": "2026-18607",
@@ -173,6 +184,9 @@
         "The text states the Atlantic Sea Scallop IFQ cost recovery year runs 'October 1 through September 31.' September has 30 days. Reviewer should confirm the intended end date.",
         "The $25 fee waiver is described in the preamble, but the amended regulatory text reproduced here (648.53, 648.74, 648.294) does not appear to contain the $25 threshold. Reviewer should check the full rule for where that waiver is codified.",
         "The preamble says permits cannot be renewed until the prior year's fee is paid, citing existing sections. It is not stated whether this rule changes that provision."
+      ],
+      "programs": [
+        "Greater Atlantic"
       ]
     },
     {
@@ -210,6 +224,9 @@
         "One workshop is in Largo, Florida, which is not on the allowed region list, so Florida is not tagged.",
         "The notice also covers protected species not on the allowed species list (sea turtles, marine mammals, smalltooth sawfish), which are therefore untagged.",
         "No effective date is stated in the document."
+      ],
+      "programs": [
+        "Highly Migratory Species"
       ]
     },
     {
@@ -244,6 +261,9 @@
       "open_questions": [
         "The notice names Lobster Conservation Management Areas 2 and 3 and Outer Cape Cod but does not describe their geographic boundaries; a reviewer may want to confirm which states or waters these cover.",
         "The notice references 'scheduled trap allocation reductions' without giving figures or a schedule."
+      ],
+      "programs": [
+        "Atlantic Coastal"
       ]
     },
     {
@@ -290,6 +310,9 @@
         "The notice does not give the calendar start date of the monkfish fishing year.",
         "The notice does not list the specific days-at-sea allocations or trip/landing limits that result from these specifications.",
         "The notice references an overfishing limit (OFL) in the default-specification rule but no OFL figures appear in Table 1."
+      ],
+      "programs": [
+        "Greater Atlantic"
       ]
     },
     {
@@ -319,7 +342,10 @@
         "Federal waters",
         "Greater Atlantic"
       ],
-      "open_questions": []
+      "open_questions": [],
+      "programs": [
+        "Greater Atlantic"
+      ]
     },
     {
       "id": "2026-17129",
@@ -349,7 +375,10 @@
         "New England",
         "Greater Atlantic"
       ],
-      "open_questions": []
+      "open_questions": [],
+      "programs": [
+        "Greater Atlantic"
+      ]
     },
     {
       "id": "2026-16870",
@@ -394,6 +423,9 @@
         "The rule mentions pelagic longline statistical reporting areas NEC, NCA, and SAR under a non-preferred alternative but does not spell out what those abbreviations stand for or where those areas are.",
         "The text references bluefin tuna Angling category subquota lines at 39 degrees 18 minutes North and 42 degrees North latitude, but does not describe the coastal locations these lines correspond to.",
         "The full text does not state when the 62.5 mt set-aside will actually appear in IBQ accounts beyond saying shareholders 'should receive this additional amount shortly.'"
+      ],
+      "programs": [
+        "Highly Migratory Species"
       ]
     },
     {
@@ -443,6 +475,9 @@
         "The 'Florida Swordfish Management Area' is named but not defined or mapped in the text provided, and it is not on the allowed region list.",
         "No effective date is stated for the proposed rule.",
         "The text references bait rules involving whole Atlantic mackerel and squid in the Northeast Distant gear restricted area, but does not specify which squid species."
+      ],
+      "programs": [
+        "Highly Migratory Species"
       ]
     },
     {
@@ -478,6 +513,9 @@
       ],
       "open_questions": [
         "The notice does not say whether the final rule implementing ICCAT Recommendation 25-05 has been issued or how it would interact with this closure if adopted later in 2026."
+      ],
+      "programs": [
+        "Highly Migratory Species"
       ]
     },
     {
@@ -531,6 +569,9 @@
         "The notice references Tables 1 through 16 for the actual numeric status determination criteria, quotas, annual catch limits, sub-annual catch limits, sector potential sector contributions, annual catch entitlements, common pool trimester total allowable catches, and incidental catch total allowable catches, but the table contents are not included in the text provided. A reviewer should pull the full notice for the figures.",
         "The text says the Georges Bank haddock quota increases 103 percent versus the 2025 allocation, while the shared U.S./Canada eastern Georges Bank haddock quota decreases 36 percent. Confirm which stock unit each figure applies to.",
         "Whether NMFS has determined that any 2025 overages occurred for the shared Georges Bank stocks, which would trigger a future reduction action, is not stated."
+      ],
+      "programs": [
+        "Greater Atlantic"
       ]
     },
     {
@@ -564,6 +605,9 @@
         "The notice covers Atlantic highly migratory species generally and does not identify specific management areas, so no region tag was applied. The Silver Spring, Maryland address is only the meeting venue.",
         "The notice does not say what Executive Order 14276 covers or which HMS actions fall under it.",
         "The draft agenda was not yet posted at the time of publication, so the full list of topics is not settled."
+      ],
+      "programs": [
+        "Highly Migratory Species"
       ]
     },
     {
@@ -599,6 +643,9 @@
         "The updated target species list for the registration form is mentioned but its contents are not given in this notice.",
         "Which species will require individual lengths and weights in post-tournament catch reports is not specified here.",
         "The bluefin tuna size classes to be used in reporting are not defined in this text."
+      ],
+      "programs": [
+        "Highly Migratory Species"
       ]
     },
     {
@@ -630,7 +677,10 @@
         "Greater Atlantic",
         "Mid-Atlantic"
       ],
-      "open_questions": []
+      "open_questions": [],
+      "programs": [
+        "Greater Atlantic"
+      ]
     },
     {
       "id": "2026-14592",
@@ -662,6 +712,9 @@
       "open_questions": [
         "The notice does not describe the geographic boundaries of the closure beyond the Atlantic bluefin tuna fishery managed under 50 CFR part 635.",
         "The notice does not say what happens to the overharvest of roughly 7.2 metric tons beyond noting it could lead to future quota reductions."
+      ],
+      "programs": [
+        "Highly Migratory Species"
       ]
     },
     {
@@ -692,7 +745,10 @@
         "Mid-Atlantic",
         "Greater Atlantic"
       ],
-      "open_questions": []
+      "open_questions": [],
+      "programs": [
+        "Greater Atlantic"
+      ]
     },
     {
       "id": "2026-14366",
@@ -724,7 +780,10 @@
         "Atlantic Ocean",
         "Greater Atlantic"
       ],
-      "open_questions": []
+      "open_questions": [],
+      "programs": [
+        "Highly Migratory Species"
+      ]
     },
     {
       "id": "2026-14363",
@@ -767,6 +826,10 @@
         "The notice refers generally to gillnet and trap/pot fixed-gear fisheries beyond lobster and Jonah crab without naming the specific finfish or shellfish stocks involved, so no further species tags could be assigned.",
         "The notice gives no timeline for when NMFS will publish the promised public summary of responses.",
         "Whether and when the postponed Council framework adjustment or the parallel lobster/Jonah crab gear-marking action will resume is not stated."
+      ],
+      "programs": [
+        "Atlantic Coastal",
+        "Greater Atlantic"
       ]
     },
     {
@@ -807,6 +870,9 @@
         "The notice does not explain why the butterfish overfishing limit and ABC dropped (for example, a new stock assessment). A reviewer may want the proposed rule (91 FR 12545) for that background.",
         "The notice does not describe the geographic boundaries of these fisheries, so the region tags are inferred from the Mid-Atlantic Fishery Management Council and Greater Atlantic Regional Fisheries Office references rather than stated areas.",
         "The document does not spell out how the butterfish mortality cap in the longfin squid fishery or the closure threshold operate in practice."
+      ],
+      "programs": [
+        "Greater Atlantic"
       ]
     },
     {
@@ -848,6 +914,9 @@
         "The notice refers to the Northeast Multispecies (groundfish), small-mesh multispecies, and Northeast Skate Complex FMPs without listing the individual stocks covered, so those species are not tagged here. A reviewer should confirm which stocks should be tagged.",
         "The notice says 27 species are managed under nine FMPs but names only seven FMPs in the proposed measures; it is not clear whether the remaining Council FMPs are affected.",
         "The text does not state an effective date or when the Council would first use the new 1-to-5-year specification cycle for any given FMP."
+      ],
+      "programs": [
+        "Greater Atlantic"
       ]
     },
     {
@@ -885,6 +954,9 @@
         "The notice does not state the status of the southern area or Gulf of America trophy subquotas, only that the Gulf of Maine area remains open.",
         "The notice does not say by how much the 2.3 mt Southern New England subquota was exceeded.",
         "It is not stated whether or how a final rule implementing ICCAT Recommendation 25-05 would affect this closure if the Southern New England subquota rises to 2.6 mt."
+      ],
+      "programs": [
+        "Highly Migratory Species"
       ]
     },
     {
@@ -935,6 +1007,9 @@
         "The preamble and Table 14 say the WGOM, GB, and EGOM cod recreational season is September 1-October 31 with no May opening, but the regulatory text at Table 3 to Paragraph (c)(2) still lists 'May 1-May 31; September 1-October 31' for those stocks. A reviewer should confirm which table applies to which recreational component and whether the May dates are an error.",
         "Framework 72 had been submitted to NMFS but its approval status is not stated, so it is not clear whether the higher GB cod limits will take effect.",
         "The full sector-by-sector allocation table (Table 6) is reproduced as a dense number grid; individual sector allocations should be verified against the original document formatting."
+      ],
+      "programs": [
+        "Greater Atlantic"
       ]
     }
   ]

@@ -54,6 +54,19 @@ FR_AGENCY = "national-oceanic-and-atmospheric-administration"
 #
 # So these title phrases run as a second pass, scoped to NOAA, and merge into the
 # same result set. Together the two passes are strictly broader than either alone.
+# What each query means in plain English. Shown on the card so a reader can tell at
+# a glance whether a notice is a Northeast council action, a highly migratory
+# species action, or an interstate coastal one. Derived from the query that matched,
+# never guessed from the title.
+PROGRAM_LABELS = {
+    "648": "Greater Atlantic",
+    "635": "Highly Migratory Species",
+    "697": "Atlantic Coastal",
+    '"Fisheries of the Northeastern United States"': "Greater Atlantic",
+    '"Atlantic Highly Migratory Species"': "Highly Migratory Species",
+    '"Atlantic Coastal Fisheries Cooperative Management"': "Atlantic Coastal",
+}
+
 FR_TITLE_TERMS = [
     '"Fisheries of the Northeastern United States"',
     '"Atlantic Highly Migratory Species"',

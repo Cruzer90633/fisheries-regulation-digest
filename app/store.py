@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS notices (
     agency               TEXT,
     raw_json             TEXT,
     body_html_url        TEXT,
+    programs             TEXT,   -- JSON array: which regulatory programs matched
     full_text            TEXT,
     full_text_truncated  INTEGER DEFAULT 0,
 
@@ -79,6 +80,7 @@ def connect(db_path=None):
 # than a clean schema.
 _ADDED_COLUMNS = {
     "body_html_url": "TEXT",
+    "programs": "TEXT",
     "full_text": "TEXT",
     "full_text_truncated": "INTEGER DEFAULT 0",
     "input_tokens": "INTEGER",
@@ -100,20 +102,34 @@ def init_db(db_path=None) -> None:
 
 
 def upsert_notice(conn: sqlite3.Connection, notice: dict) -> bool:
-    """Insert a notice if it is new. Returns True if it was inserted.
+    """Insert a notice if it is new. Returns True only if it was newly inserted.
 
-    Existing rows are left alone — a summary already written is never clobbered
-    by a re-fetch.
+    A summary already written is never clobbered by a re-fetch. The only fields
+    refreshed on an existing row are provenance — which programs matched, and the
+    full-text URL if we did not have one. Both are metadata about where the notice
+    came from, not claims about what it says.
     """
     if not notice.get("document_number"):
         raise ValueError("notice has no document_number; refusing to store it")
 
-    cursor = conn.execute(
+    # rowcount cannot distinguish insert from update once ON CONFLICT is in play,
+    # so ask first. Cheap: document_number is the primary key.
+    existed = conn.execute(
+        "SELECT 1 FROM notices WHERE document_number = ?",
+        (notice["document_number"],),
+    ).fetchone() is not None
+
+    conn.execute(
         """
-        INSERT OR IGNORE INTO notices (
+        INSERT INTO notices (
             document_number, title, doc_type, publication_date, effective_on,
-            html_url, abstract, agency, raw_json, body_html_url, status, first_seen_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            html_url, abstract, agency, raw_json, body_html_url, programs,
+            status, first_seen_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(document_number) DO UPDATE SET
+            programs      = excluded.programs,
+            body_html_url = COALESCE(NULLIF(notices.body_html_url, ''),
+                                     excluded.body_html_url)
         """,
         (
             notice["document_number"],
@@ -126,11 +142,12 @@ def upsert_notice(conn: sqlite3.Connection, notice: dict) -> bool:
             notice.get("agency", ""),
             notice.get("raw_json", ""),
             notice.get("body_html_url", ""),
+            json.dumps(notice.get("programs", [])),
             STATUS_NEW,
             _now(),
         ),
     )
-    return cursor.rowcount > 0
+    return not existed
 
 
 def save_full_text(conn: sqlite3.Connection, document_number: str, text: str,
@@ -216,7 +233,8 @@ def approved(conn: sqlite3.Connection) -> list[dict]:
 def to_dict(row: sqlite3.Row) -> dict:
     """Row to plain dict, decoding the JSON array columns."""
     record = dict(row)
-    for field in ("key_details", "species", "regions", "unclear", "dropped_tags"):
+    for field in ("key_details", "species", "regions", "unclear", "dropped_tags",
+                  "programs"):
         raw = record.get(field)
         try:
             record[field] = json.loads(raw) if raw else []
