@@ -5,11 +5,21 @@ name: Weekly fetch and summarize
 # It deliberately stops there. Approval is a human step, so this workflow never
 # publishes: it commits the drafts and opens nothing to the public. Run `review`
 # locally, then `build`, then push the site.
+#
+# Every run commits app/data/last-run.json, even a run that found nothing. That
+# is on purpose. Without it a quiet week, a broken job and a schedule that
+# stopped firing all look the same — no email, no commit, nothing. A commit
+# every Monday turns "no news" into something you can actually see, and keeps
+# the repository active so GitHub does not disable the schedule after 60 days.
 
 on:
   schedule:
-    # 07:00 UTC Monday — after the Friday and weekend Federal Register issues.
-    - cron: "0 7 * * 1"
+    # 07:17 UTC Monday — after the Friday and weekend Federal Register issues.
+    #
+    # Deliberately not on the hour. GitHub documents that scheduled runs can be
+    # delayed, and dropped entirely, when Actions is under load, and that load
+    # peaks at the start of every hour. A few minutes past is free insurance.
+    - cron: "17 7 * * 1"
   workflow_dispatch:
     inputs:
       days:
@@ -37,21 +47,33 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Fetch new notices
-        run: python -m app.cli fetch --days "${{ inputs.days || '14' }}"
-
-      - name: Draft summaries
+      # continue-on-error so that a partial failure still gets committed and
+      # recorded. Losing four good drafts because the fifth failed would be a
+      # poor trade. The job is failed deliberately at the end instead.
+      - name: Fetch and draft
+        id: draft
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python -m app.cli summarize
+        run: python -m app.cli run --days "${{ inputs.days || '14' }}"
 
-      - name: Show where things stand
-        run: python -m app.cli status
-
-      - name: Commit new drafts
+      - name: Commit the run record and any new drafts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f app/data/digest.db
-          git diff --staged --quiet || git commit -m "Weekly draft run: new summaries awaiting review"
-          git push
+          git add -A app/data
+          if git diff --staged --quiet; then
+            echo "Nothing to commit — the run did not get far enough to record itself."
+          else
+            MESSAGE="$(python -m app.cli heartbeat --headline)"
+            git commit -m "$MESSAGE"
+            git push
+          fi
+
+      # Last, so the record is safely committed before the job goes red. A red
+      # run emails you; that is the point.
+      - name: Fail if the run did not complete cleanly
+        if: steps.draft.outcome == 'failure'
+        run: |
+          echo "The draft step reported a problem. See the run summary above."
+          exit 1

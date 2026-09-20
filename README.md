@@ -8,8 +8,23 @@ Office (GARFO).
 
 ## The weekly rhythm
 
-**Monday 07:00 UTC** — the `Weekly fetch and summarize` Action pulls new Federal
+**Monday 07:17 UTC** — the `Weekly fetch and summarize` Action pulls new Federal
 Register notices and drafts summaries. It commits them and stops. It never publishes.
+
+**Every run leaves a commit**, even a week with nothing in it. That is deliberate.
+Without it, a quiet week and a broken job look exactly the same — no email, no
+commit, nothing at all. The commit subject tells you which you got:
+
+```
+Weekly run: 3 new summary(ies) awaiting review
+Weekly run: nothing new
+Weekly run: 2 drafted, 1 failed — check the log
+Weekly run: could not draft — No Claude credentials found.
+```
+
+So **a Monday with no new commit means something is wrong**, not that the ocean was
+quiet. Check the Actions tab. `app.cli status` also tells you when the robot last
+ran and what it found.
 
 **You, whenever it suits** — `git pull`, then review, build, commit, push. The live
 site updates a minute or two later.
@@ -103,7 +118,7 @@ These are the point of the design.
 Live and running. As of 2026-09-20:
 
 - 24 summaries published, all reviewed and approved by hand
-- 37 tests pass on Python 3.13
+- 45 tests pass on Python 3.13
 - Vocabularies verified against the councils' current fishery management plans, plus
   ASMFC and NOAA HMS — 115 species, 32 regions
 - Ingest covers 50 CFR parts 648, 635 and 697 plus three title phrases, so Northeast

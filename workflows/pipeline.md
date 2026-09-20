@@ -66,5 +66,40 @@ root or a folder named `docs`.
 
 ## Automation
 
-`.github/workflows/weekly-digest.yml` runs fetch and summarize every Monday at 07:00
-UTC, commits the drafts, and stops. It never publishes. Review stays human.
+`.github/workflows/weekly-digest.yml` runs `app.cli run` — fetch then summarize —
+every Monday at 07:17 UTC, commits what it found, and stops. It never publishes.
+Review stays human.
+
+07:17 rather than 07:00 because GitHub documents that scheduled runs can be delayed,
+and sometimes dropped, when Actions is under load, and load peaks at the top of the
+hour.
+
+### The run record
+
+Every run writes `app/data/last-run.json` and commits it, whether or not it found
+anything. Nothing about the record is clever; it exists because silence is
+ambiguous. A week with no new rules, a job that broke, and a schedule GitHub quietly
+disabled all produce the same nothing. A commit every Monday separates them, and the
+commit subject says which one you got:
+
+```
+Weekly run: 3 new summary(ies) awaiting review
+Weekly run: nothing new
+Weekly run: 2 drafted, 1 failed — check the log
+Weekly run: could not draft — No Claude credentials found.
+```
+
+Read it locally with `app.cli heartbeat`, or `app.cli status`, which ends with the
+same line.
+
+Three supporting choices, all in service of the same thing:
+
+- **A partial failure fails the job.** `run` exits non-zero if any notice failed to
+  draft, not only if every one did. Four good drafts and a fifth that broke used to
+  report success.
+- **The drafts are committed first, the job fails after.** Losing four good drafts
+  because the fifth failed would be a poor trade, so the commit step runs either way
+  and the job is failed deliberately at the end. A red run emails you.
+- **A weekly commit keeps the schedule alive.** GitHub disables scheduled workflows
+  in a public repository after 60 days with no repository activity. A quiet stretch
+  could have killed the cron silently. Now it cannot.

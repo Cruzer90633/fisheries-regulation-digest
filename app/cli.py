@@ -6,16 +6,18 @@
     python -m app.cli build       generate the static site
     python -m app.cli status      show where everything stands
     python -m app.cli run         fetch + summarize (no publishing)
+    python -m app.cli heartbeat   what the last automated run found
 """
 
 from __future__ import annotations
 
 import argparse
 import logging
+import os
 import sys
 import textwrap
 
-from . import build_site, config, fetch, fulltext, store
+from . import build_site, config, fetch, fulltext, heartbeat, store
 
 
 def _setup_logging(verbose: bool) -> None:
@@ -32,9 +34,10 @@ def _wrap(text: str, indent: str = "  ") -> str:
 # --- commands ------------------------------------------------------------
 
 
-def cmd_fetch(args) -> int:
+def _fetch(days: int) -> dict:
+    """Pull notices into the database. Returns a tally for the run record."""
     store.init_db()
-    raw_notices = fetch.fetch_notices(days_back=args.days)
+    raw_notices = fetch.fetch_notices(days_back=days)
 
     added = 0
     skipped = 0
@@ -48,9 +51,11 @@ def cmd_fetch(args) -> int:
             if store.upsert_notice(conn, notice):
                 added += 1
 
-    print(f"Fetched {len(raw_notices)} notice(s). {added} new, {len(raw_notices) - added - skipped} already known.")
-    if skipped:
-        print(f"{skipped} skipped — no document number.")
+    return {"fetched": len(raw_notices), "added": added, "skipped": skipped}
+
+
+def cmd_fetch(args) -> int:
+    _report_fetch(_fetch(args.days))
     return 0
 
 
@@ -85,14 +90,25 @@ def _ensure_full_text(notice: dict) -> dict:
     return notice
 
 
-def cmd_summarize(args) -> int:
+def _summarize(limit: int) -> dict:
+    """Draft summaries for everything new. Returns a tally for the run record.
+
+    A missing credential comes back as `blocked` rather than being raised. The
+    caller still wants to record that the run happened and why it drafted
+    nothing — an unexplained quiet week is the exact failure this reporting
+    exists to prevent.
+    """
     # Imported here so fetch/review/build work before the Claude SDK is installed.
     from . import summarize as summarizer
+
+    stats = {"drafted": 0, "failed": 0, "blocked": "",
+             "input_tokens": 0, "output_tokens": 0}
 
     problem = summarizer.credential_problem()
     if problem:
         print(problem)
-        return 1
+        stats["blocked"] = problem.splitlines()[0]
+        return stats
 
     store.init_db()
 
@@ -101,17 +117,12 @@ def cmd_summarize(args) -> int:
 
     if not pending:
         print("Nothing to summarize.")
-        return 0
+        return stats
 
-    if args.limit:
-        pending = pending[: args.limit]
+    if limit:
+        pending = pending[:limit]
 
     print(f"Summarizing {len(pending)} notice(s) with {config.MODEL}.\n")
-
-    done = 0
-    failed = 0
-    total_in = 0
-    total_out = 0
 
     for index, notice in enumerate(pending, start=1):
         print(f"[{index}/{len(pending)}] {notice['title'][:78]}")
@@ -121,7 +132,7 @@ def cmd_summarize(args) -> int:
         try:
             summary = summarizer.summarize(notice)
         except summarizer.SummarizeError as exc:
-            failed += 1
+            stats["failed"] += 1
             print(f"  FAILED: {exc}\n")
             continue
 
@@ -129,11 +140,11 @@ def cmd_summarize(args) -> int:
         with store.connect() as conn:
             store.save_summary(conn, notice["document_number"], summary, usage)
 
-        done += 1
+        stats["drafted"] += 1
         tokens_in = usage.get("input_tokens", 0)
         tokens_out = usage.get("output_tokens", 0)
-        total_in += tokens_in
-        total_out += tokens_out
+        stats["input_tokens"] += tokens_in
+        stats["output_tokens"] += tokens_out
 
         flags = []
         if summary["unclear"]:
@@ -145,16 +156,37 @@ def cmd_summarize(args) -> int:
         print(f"  {tokens_in:,} in / {tokens_out:,} out — "
               f"${config.estimate_cost(tokens_in, tokens_out):.4f}\n")
 
-    if done:
-        print(f"Drafted {done}. Failed {failed}.")
-        print(f"Tokens: {total_in:,} in / {total_out:,} out. "
-              f"Estimated cost ${config.estimate_cost(total_in, total_out):.2f} "
-              f"(${config.estimate_cost(total_in, total_out) / done:.4f} per notice).")
-        print("Estimate only — check the Console for actual billing.")
-        print("Run `review` next — nothing publishes without it.")
-    else:
-        print(f"Nothing drafted. {failed} failed.")
-    return 1 if failed and not done else 0
+    return stats
+
+
+def _report_fetch(stats: dict) -> None:
+    known = stats["fetched"] - stats["added"] - stats["skipped"]
+    print(f"Fetched {stats['fetched']} notice(s). {stats['added']} new, {known} already known.")
+    if stats["skipped"]:
+        print(f"{stats['skipped']} skipped — no document number.")
+
+
+def _report_summarize(stats: dict) -> None:
+    done = stats["drafted"]
+    failed = stats["failed"]
+    if not done:
+        if failed:
+            print(f"Nothing drafted. {failed} failed.")
+        return
+    cost = config.estimate_cost(stats["input_tokens"], stats["output_tokens"])
+    print(f"Drafted {done}. Failed {failed}.")
+    print(f"Tokens: {stats['input_tokens']:,} in / {stats['output_tokens']:,} out. "
+          f"Estimated cost ${cost:.2f} (${cost / done:.4f} per notice).")
+    print("Estimate only — check the Console for actual billing.")
+    print("Run `review` next — nothing publishes without it.")
+
+
+def cmd_summarize(args) -> int:
+    stats = _summarize(args.limit)
+    _report_summarize(stats)
+    if stats["blocked"]:
+        return 1
+    return 1 if stats["failed"] and not stats["drafted"] else 0
 
 
 def cmd_review(args) -> int:
@@ -265,18 +297,108 @@ def cmd_status(args) -> int:
         store.STATUS_APPROVED: "approved and publishable",
         store.STATUS_REJECTED: "rejected",
     }
-    print(f"Database: {config.DB_PATH}\n")
+    print(f"Database: {config.DB_PATH}")
+    print()
     for status, label in labels.items():
         print(f"  {tally.get(status, 0):>4}  {label}")
+
+    print()
+    run = heartbeat.read()
+    if run:
+        print(f"Last automated run: {run['ran_at']}")
+        print(f"  {heartbeat.headline(run)}")
+    else:
+        print("No automated run recorded here yet.")
+        print("  The weekly job writes one every time it runs, even a quiet one.")
     return 0
 
 
+def _write_step_summary(run: dict) -> None:
+    """Put the outcome on the GitHub Actions run page, when we are in one.
+
+    Costs nothing locally and saves opening the log just to find out whether a
+    run did anything.
+    """
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if not path:
+        return
+    fence = chr(96) * 3
+    try:
+        with open(path, "a", encoding="utf-8") as handle:
+            print(f"### {heartbeat.headline(run)}", file=handle)
+            print(file=handle)
+            print(fence, file=handle)
+            for line in heartbeat.lines(run)[2:]:
+                print(line, file=handle)
+            print(fence, file=handle)
+    except OSError as exc:
+        logging.warning("Could not write the step summary: %s", exc)
+
+
 def cmd_run(args) -> int:
-    code = cmd_fetch(args)
-    if code:
-        return code
+    """Fetch, then draft, then record that it happened.
+
+    This is what the weekly job calls. It always writes a run record — after a
+    busy week, a quiet one, or a failure — because otherwise all three look
+    identical from the outside. It exits non-zero if anything went wrong at
+    all, including a partial failure, so a run that half-worked cannot report
+    success.
+    """
+    blocked = ""
+    try:
+        fetch_stats = _fetch(args.days)
+        _report_fetch(fetch_stats)
+    except fetch.FetchError as exc:
+        logging.error("%s", exc)
+        fetch_stats = {"fetched": 0, "added": 0, "skipped": 0}
+        blocked = f"fetch failed: {exc}"
+
     print()
-    return cmd_summarize(args)
+    if blocked:
+        sum_stats = {"drafted": 0, "failed": 0, "blocked": blocked,
+                     "input_tokens": 0, "output_tokens": 0}
+        print("Skipping the draft step — the fetch did not complete.")
+    else:
+        sum_stats = _summarize(args.limit)
+        _report_summarize(sum_stats)
+
+    store.init_db()
+    with store.connect() as conn:
+        tally = store.counts(conn)
+
+    run = heartbeat.record(
+        days_back=args.days,
+        fetched=fetch_stats["fetched"],
+        added=fetch_stats["added"],
+        drafted=sum_stats["drafted"],
+        failed=sum_stats["failed"],
+        blocked=sum_stats["blocked"],
+        tally=tally,
+    )
+    path = heartbeat.write(run)
+
+    print()
+    for line in heartbeat.lines(run):
+        print(line)
+    print()
+    print(f"Run record: {path}")
+    _write_step_summary(run)
+
+    return 1 if (sum_stats["blocked"] or sum_stats["failed"]) else 0
+
+
+def cmd_heartbeat(args) -> int:
+    """Report the last automated run. The workflow uses it for its commit message."""
+    run = heartbeat.read()
+    if not run:
+        print("No run recorded yet.")
+        return 1
+    if args.headline:
+        print(heartbeat.headline(run))
+    else:
+        for line in heartbeat.lines(run):
+            print(line)
+    return 0
 
 
 # --- entry point ---------------------------------------------------------
@@ -315,6 +437,11 @@ def main(argv: list[str] | None = None) -> int:
     p_run.add_argument("--days", type=int, default=60)
     p_run.add_argument("--limit", type=int, default=0)
     p_run.set_defaults(func=cmd_run)
+
+    p_beat = subparsers.add_parser("heartbeat", help="what the last automated run found")
+    p_beat.add_argument("--headline", action="store_true",
+                        help="one line only, for a commit message")
+    p_beat.set_defaults(func=cmd_heartbeat)
 
     args = parser.parse_args(argv)
     _setup_logging(args.verbose)

@@ -13,7 +13,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from app import build_site, fetch, fulltext, store, summarize, tagging  # noqa: E402
+from app import (  # noqa: E402
+    build_site, fetch, fulltext, heartbeat, store, summarize, tagging,
+)
 
 
 class TestTagging(unittest.TestCase):
@@ -506,6 +508,55 @@ class TestBuildSite(unittest.TestCase):
         page = (self.out / "index.html").read_text(encoding="utf-8")
         self.assertIn("Bluefish Quota Transfer", page)
         self.assertIn("https://example.gov/doc", page)
+
+
+class TestHeartbeat(unittest.TestCase):
+    """The run record exists so that a quiet week cannot be mistaken for a
+    broken job. These tests guard that distinction, which is the whole point."""
+
+    def _run(self, **overrides):
+        base = dict(days_back=14, fetched=20, added=0, drafted=0, failed=0,
+                    blocked="", tally={"summarized": 0, "approved": 24})
+        base.update(overrides)
+        return heartbeat.record(**base)
+
+    def test_quiet_week_says_so(self):
+        self.assertEqual(heartbeat.headline(self._run()), "Weekly run: nothing new")
+
+    def test_drafts_waiting_lead_the_headline(self):
+        run = self._run(added=3, drafted=3, tally={"summarized": 3, "approved": 24})
+        self.assertIn("3 new summary", heartbeat.headline(run))
+        self.assertEqual(run["awaiting_review"], 3)
+
+    def test_a_blocked_run_never_reads_as_quiet(self):
+        run = self._run(blocked="No Claude credentials found.")
+        headline = heartbeat.headline(run)
+        self.assertIn("could not draft", headline)
+        self.assertNotIn("nothing new", headline)
+
+    def test_partial_failure_is_reported_not_buried(self):
+        run = self._run(added=5, drafted=4, failed=1)
+        self.assertIn("1 failed", heartbeat.headline(run))
+
+    def test_fetched_but_nothing_drafted_is_distinguishable(self):
+        run = self._run(added=2, drafted=0)
+        self.assertIn("none drafted", heartbeat.headline(run))
+
+    def test_round_trip_through_disk(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "last-run.json"
+            run = self._run(added=1, drafted=1)
+            heartbeat.write(run, path)
+            self.assertEqual(heartbeat.read(path), run)
+
+    def test_missing_record_reads_as_none(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertIsNone(heartbeat.read(Path(tmp) / "absent.json"))
+
+    def test_published_count_comes_from_the_database(self):
+        run = self._run(tally={"approved": 24, "summarized": 2, "rejected": 1})
+        self.assertEqual(run["published"], 24)
+        self.assertEqual(run["awaiting_review"], 2)
 
 
 if __name__ == "__main__":
