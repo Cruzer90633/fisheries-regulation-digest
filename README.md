@@ -48,7 +48,7 @@ subscribing to mailing lists.
 ```
 fetch  →  summarize  →  review  →  build
  │          │             │          │
- │          │             │          └─ docs/index.html
+ │          │             │          └─ docs/ — page, data, RSS feed
  │          │             └─ you approve; nothing publishes without this
  │          └─ Claude drafts against a fixed JSON schema
  └─ Federal Register API
@@ -73,7 +73,7 @@ python -m app.cli build
 | --- | --- |
 | `app/` | The pipeline: fetch, summarize, review, build |
 | `tests/` | Unit tests (no network, no API calls) |
-| `workflows/` | Workflow instructions, agent definitions, process documents |
+| `workflows/` | How the pipeline works, and the human review gate |
 | `docs/` | The generated public site: page, data, RSS feed (GitHub Pages serves this) |
 | `outputs/` | Completed work and generated deliverables |
 | `resources/` | Reference material, source documents, examples, research |
@@ -90,24 +90,28 @@ These are the point of the design.
   `effective_on` field. The model is not asked for them.
 - **Tags are validated.** Anything the model proposes that is not in
   `resources/species-list.md` or `resources/region-list.md` is dropped and logged.
-- **Uncertainty is surfaced.** The model fills an `unclear` array; anything in it
-  blocks approval until a human checks the original.
+- **Uncertainty is published, not hidden.** Anything the model could not settle is
+  shown on the card as an open question. A summary that admits its gaps is worth more
+  than one that smooths them over.
 - **A human approves every summary** before it can reach the site.
+- **Provenance is recorded, not inferred.** Which programme a notice belongs to comes
+  from the query that matched it, never from reading its title.
 - **Every card links to the original notice.**
 
 ## Status
 
-V1 pipeline working. As of 2026-09-20:
+Live and running. As of 2026-09-20:
 
-- 17/17 tests pass on Python 3.13
-- `fetch` runs against the live Federal Register API and stores real notices — 23
-  unique documents over a 90-day window, across Northeast, HMS, and ASMFC actions
-- The front end renders and filters correctly, verified in a browser
-- The species and region vocabularies are verified against the councils' current
-  fishery management plans, plus ASMFC and NOAA HMS — 115 species, 32 regions
+- 24 summaries published, all reviewed and approved by hand
+- 37 tests pass on Python 3.13
+- Vocabularies verified against the councils' current fishery management plans, plus
+  ASMFC and NOAA HMS — 115 species, 32 regions
+- Ingest covers 50 CFR parts 648, 635 and 697 plus three title phrases, so Northeast
+  council, highly migratory species and interstate coastal actions all arrive
+- Cost to produce the whole archive: about $3.40
 
-Not yet exercised: `summarize`, which needs an `ANTHROPIC_API_KEY`. Everything up to
-that point runs.
+Crawlers are asked to stay away in `robots.txt` — a deliberate choice while the site
+finds its audience, reversible in `app/config.py`.
 
 ## Disclaimer
 
