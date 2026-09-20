@@ -1,0 +1,57 @@
+name: Weekly fetch and summarize
+
+# Fetches new Federal Register notices and drafts summaries once a week.
+#
+# It deliberately stops there. Approval is a human step, so this workflow never
+# publishes: it commits the drafts and opens nothing to the public. Run `review`
+# locally, then `build`, then push the site.
+
+on:
+  schedule:
+    # 07:00 UTC Monday — after the Friday and weekend Federal Register issues.
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to fetch"
+        required: false
+        default: "14"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-digest
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch new notices
+        run: python -m app.cli fetch --days "${{ inputs.days || '14' }}"
+
+      - name: Draft summaries
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m app.cli summarize
+
+      - name: Show where things stand
+        run: python -m app.cli status
+
+      - name: Commit new drafts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f app/data/digest.db
+          git diff --staged --quiet || git commit -m "Weekly draft run: new summaries awaiting review"
+          git push

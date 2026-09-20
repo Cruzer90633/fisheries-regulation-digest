@@ -1,0 +1,2 @@
+# Claude API client — used by app/summarize.py
+anthropic>=1.0.0
