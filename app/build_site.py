@@ -20,11 +20,17 @@ from __future__ import annotations
 import html
 import json
 import logging
-from datetime import date
+from datetime import date, datetime, timezone
+from email.utils import format_datetime
+from xml.sax.saxutils import escape
 
 from . import config, store
 
 log = logging.getLogger(__name__)
+
+FEED_LIMIT = 40          # newest N summaries in the feed
+GZIP_RATIO = 3.3         # measured on the live site, 2026-09-20
+SIZE_WARN_BYTES = 400_000
 
 
 def _card_data(record: dict) -> dict:
@@ -48,6 +54,84 @@ def _card_data(record: dict) -> dict:
         # that matched it, not inferred from the title.
         "programs": record.get("programs") or [],
     }
+
+
+def _rfc2822(iso: str) -> str:
+    """RSS requires RFC-2822 dates. Publication dates have no time, so use midday
+    UTC — far enough from either boundary that no reader's timezone shifts the day."""
+    try:
+        stamp = datetime.strptime(iso, "%Y-%m-%d").replace(hour=12, tzinfo=timezone.utc)
+    except (ValueError, TypeError):
+        stamp = datetime.now(timezone.utc)
+    return format_datetime(stamp)
+
+
+def _feed(cards: list[dict], site_url: str) -> str:
+    """An RSS 2.0 feed of the newest summaries.
+
+    The point of the project is that someone knows when a rule touches their species
+    or region without having to remember to visit. A static feed does that with no
+    server and no subscriber list.
+    """
+    items = []
+    for card in cards[:FEED_LIMIT]:
+        tags = ", ".join(card["species"] + card["regions"])
+        effective = card["effective"] or "not stated in the notice"
+        body = (
+            f"{card['what_changed']}\n\n"
+            f"Effective: {effective}\n"
+            f"{('Tags: ' + tags) if tags else ''}\n\n"
+            f"Original notice: {card['url']}"
+        ).strip()
+
+        # Link to the summary on the site, not to the Federal Register. A reader
+        # who clicks through from their feed should land on the plain-English
+        # version — that is the whole point. The original is in the description.
+        permalink = f"{site_url}#{card['id']}"
+
+        items.append(
+            "    <item>\n"
+            f"      <title>{escape(card['title'])}</title>\n"
+            f"      <link>{escape(permalink)}</link>\n"
+            f"      <guid isPermaLink=\"false\">{escape(card['id'])}</guid>\n"
+            f"      <pubDate>{_rfc2822(card['published'])}</pubDate>\n"
+            f"      <description>{escape(body)}</description>\n"
+            "    </item>"
+        )
+
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
+        "  <channel>\n"
+        f"    <title>{escape(config.SITE_TITLE)}</title>\n"
+        f"    <link>{escape(site_url)}</link>\n"
+        f"    <description>{escape(config.SITE_TAGLINE)}</description>\n"
+        "    <language>en-us</language>\n"
+        f"    <lastBuildDate>{format_datetime(datetime.now(timezone.utc))}</lastBuildDate>\n"
+        f'    <atom:link href="{escape(site_url)}feed.xml" rel="self" '
+        'type="application/rss+xml"/>\n'
+        + "\n".join(items)
+        + "\n  </channel>\n</rss>\n"
+    )
+
+
+def _size_report(page_bytes: int, notice_count: int) -> str | None:
+    """Warn if the page is getting heavy.
+
+    Measured 2026-09-20: 23 notices render to ~100 KB raw, which GitHub Pages gzips
+    to ~30 KB on the wire — a ratio of about 3.3. That is the number this estimate
+    uses. It is fine now; this exists so growth announces itself rather than being
+    discovered by a reader on a slow connection.
+    """
+    on_the_wire = page_bytes / GZIP_RATIO
+    if on_the_wire < SIZE_WARN_BYTES:
+        return None
+    return (
+        f"The page is now ~{on_the_wire / 1024:.0f} KB compressed across "
+        f"{notice_count} summaries. Past roughly {SIZE_WARN_BYTES / 1024:.0f} KB it is "
+        "worth splitting the archive by year rather than sending every summary to "
+        "every visitor."
+    )
 
 
 def build(db_path=None, out_dir=None) -> dict:
@@ -93,8 +177,25 @@ def build(db_path=None, out_dir=None) -> dict:
     )
     (out / "index.html").write_text(page, encoding="utf-8")
 
+    (out / "feed.xml").write_text(_feed(cards, config.SITE_URL), encoding="utf-8")
+    (out / "robots.txt").write_text(config.ROBOTS_TXT, encoding="utf-8")
+
+    page_bytes = len(page.encode("utf-8"))
+    warning = _size_report(page_bytes, len(cards))
+    if warning:
+        log.warning("%s", warning)
+
     log.info("Wrote %d notice(s) to %s", len(cards), out)
-    return {"path": out, "count": len(cards), "species": len(species), "regions": len(regions)}
+    return {
+        "path": out,
+        "count": len(cards),
+        "species": len(species),
+        "regions": len(regions),
+        "page_bytes": page_bytes,
+        "wire_bytes": int(page_bytes / GZIP_RATIO),
+        "feed_items": min(len(cards), FEED_LIMIT),
+        "size_warning": warning,
+    }
 
 
 TEMPLATE = r"""<!DOCTYPE html>
@@ -104,6 +205,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{TITLE}}</title>
 <meta name="description" content="{{TAGLINE}}">
+<link rel="alternate" type="application/rss+xml" title="{{TITLE}}" href="feed.xml">
 <script>
   // Apply the saved theme before first paint, otherwise a visitor who chose light
   // sees a dark flash on every page load. Storage can throw in a private window.
@@ -367,6 +469,7 @@ TEMPLATE = r"""<!DOCTYPE html>
     <p>{{DISCLAIMER}}</p>
     <p>Summaries are drafted automatically and reviewed by a person before publication.
        Open questions are shown rather than hidden. Source data: the U.S. Federal Register.</p>
+    <p><a href="feed.xml">Subscribe by RSS</a> to hear about new rules without checking back.</p>
   </footer>
 </div>
 

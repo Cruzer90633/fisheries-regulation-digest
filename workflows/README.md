@@ -1,19 +1,19 @@
 # Workflows
 
-Workflow instructions, agent definitions, and process documents.
+Process documents: how the system works and where human judgement is required.
 
-Each workflow is one markdown file describing a repeatable process: what triggers it,
-what it takes as input, the steps in order, and what "done" looks like.
+## Contents
 
-## Naming
+- [pipeline.md](pipeline.md) — what the code does at each stage, and in which module
+- [review-summary.md](review-summary.md) — the human review gate, and what to check
+- [build-plan.md](build-plan.md) — the V1 architecture and the decisions behind it
 
-`<verb>-<object>.md` — lowercase, hyphens, descriptive.
-Examples: `ingest-sources.md`, `summarize-notice.md`, `publish-digest.md`.
+## A note on what used to be here
 
-## Current workflows
+`ingest-sources.md`, `summarize-notice.md` and `publish-digest.md` were written before
+the pipeline existed, when the plan was a manual process driven by an agent. They
+described collecting from MAFMC and GARFO into `drafts/` — which is not what the code
+does, and had not been true for some time. Keeping instructions that misdescribe the
+system is worse than having none, so they are replaced by `pipeline.md`.
 
-- [build-plan.md](build-plan.md) — V1 architecture and the decisions behind it
-- [ingest-sources.md](ingest-sources.md) — collect new notices from MAFMC and GARFO
-- [summarize-notice.md](summarize-notice.md) — turn one notice into a plain-English summary
-- [review-summary.md](review-summary.md) — accuracy check before anything is published
-- [publish-digest.md](publish-digest.md) — assemble reviewed summaries into a digest
+Git history has them if you want to see the original process design.

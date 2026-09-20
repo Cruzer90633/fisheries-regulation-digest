@@ -56,8 +56,9 @@ fetch  →  summarize  →  review  →  build
 
 Python pipeline, SQLite for state, a generated static site. No server to run.
 
-See [SETUP.md](SETUP.md) to get it running and
-[workflows/build-plan.md](workflows/build-plan.md) for the design decisions.
+See [SETUP.md](SETUP.md) to get it running, [workflows/pipeline.md](workflows/pipeline.md)
+for what each stage does, and [workflows/build-plan.md](workflows/build-plan.md) for the
+design decisions.
 
 ```
 python -m app.cli fetch
@@ -73,7 +74,7 @@ python -m app.cli build
 | `app/` | The pipeline: fetch, summarize, review, build |
 | `tests/` | Unit tests (no network, no API calls) |
 | `workflows/` | Workflow instructions, agent definitions, process documents |
-| `docs/` | The generated public site (GitHub Pages serves this folder) |
+| `docs/` | The generated public site: page, data, RSS feed (GitHub Pages serves this) |
 | `outputs/` | Completed work and generated deliverables |
 | `resources/` | Reference material, source documents, examples, research |
 | `drafts/` | Work in progress and temporary files |

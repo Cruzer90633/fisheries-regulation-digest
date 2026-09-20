@@ -326,6 +326,138 @@ class TestSummaryValidation(unittest.TestCase):
         self.assertIn("Atlantis", result["dropped_tags"])
 
 
+class TestProvenance(unittest.TestCase):
+    """Which programme a notice belongs to is recorded from the query that matched
+    it. It must never be guessed from the title."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.db = Path(self.tmp.name) / "test.db"
+        store.init_db(self.db)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_every_query_maps_to_a_programme_label(self):
+        from app import config
+
+        for part in config.FR_CFR_PARTS:
+            self.assertIn(part, config.PROGRAM_LABELS, f"CFR part {part} has no label")
+        for term in config.FR_TITLE_TERMS:
+            self.assertIn(term, config.PROGRAM_LABELS, f"title term {term} has no label")
+
+    def test_a_document_matching_two_queries_gets_both_programmes(self):
+        def fake_part(cfr_part, since, max_pages):
+            # The same document amends 648 and is an HMS action.
+            if cfr_part in ("648", "635"):
+                return [{"document_number": "2026-BOTH", "publication_date": "2026-05-01"}]
+            return []
+
+        original_part, original_term = fetch._fetch_part, fetch._fetch_term
+        fetch._fetch_part, fetch._fetch_term = fake_part, lambda t, s, m: []
+        try:
+            notices = fetch.fetch_notices(days_back=30)
+        finally:
+            fetch._fetch_part, fetch._fetch_term = original_part, original_term
+
+        self.assertEqual(len(notices), 1)
+        self.assertEqual(
+            fetch.normalize(notices[0])["programs"],
+            ["Greater Atlantic", "Highly Migratory Species"],
+        )
+
+    def test_refetch_refreshes_provenance_without_touching_the_summary(self):
+        base = {
+            "document_number": "2026-00003", "title": "T", "doc_type": "Rule",
+            "publication_date": "2026-09-01", "effective_on": "2026-09-15",
+            "html_url": "https://example.gov/doc", "abstract": "", "agency": "NOAA",
+            "raw_json": "{}", "body_html_url": "https://example.gov/full",
+        }
+        with store.connect(self.db) as conn:
+            self.assertTrue(store.upsert_notice(conn, dict(base, programs=[])))
+            store.save_summary(conn, "2026-00003", {
+                "what_changed": "Something changed.", "who_affected": "Someone.",
+                "key_details": [], "species": [], "regions": [], "unclear": [],
+                "dropped_tags": [],
+            })
+            store.set_review(conn, "2026-00003", store.STATUS_APPROVED, "checked")
+
+            # A later fetch now knows the programme.
+            self.assertFalse(
+                store.upsert_notice(conn, dict(base, programs=["Greater Atlantic"]))
+            )
+            row = store.to_dict(store.get(conn, "2026-00003"))
+
+        self.assertEqual(row["programs"], ["Greater Atlantic"], "provenance should refresh")
+        self.assertEqual(row["what_changed"], "Something changed.", "summary must survive")
+        self.assertEqual(row["status"], store.STATUS_APPROVED, "approval must survive")
+
+
+class TestFeedAndRobots(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.db = Path(self.tmp.name) / "test.db"
+        self.out = Path(self.tmp.name) / "site"
+        store.init_db(self.db)
+        with store.connect(self.db) as conn:
+            store.upsert_notice(conn, {
+                "document_number": "2026-00004",
+                "title": "Bluefish & Scup <Quota> Transfer",
+                "doc_type": "Rule", "publication_date": "2026-09-11",
+                "effective_on": "2026-09-10", "html_url": "https://example.gov/doc",
+                "abstract": "", "agency": "NOAA", "raw_json": "{}",
+                "body_html_url": "", "programs": ["Greater Atlantic"],
+            })
+            store.save_summary(conn, "2026-00004", {
+                "what_changed": "Quota moved between two states.",
+                "who_affected": "Permit holders.", "key_details": [],
+                "species": ["Bluefish"], "regions": ["Mid-Atlantic"],
+                "unclear": [], "dropped_tags": [],
+            })
+            store.set_review(conn, "2026-00004", store.STATUS_APPROVED)
+        build_site.build(db_path=self.db, out_dir=self.out)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_feed_is_well_formed_and_escapes_markup(self):
+        import xml.etree.ElementTree as ET
+
+        raw = (self.out / "feed.xml").read_text(encoding="utf-8")
+        root = ET.fromstring(raw)  # raises if the XML is malformed
+        items = root.findall("./channel/item")
+
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0].findtext("title"), "Bluefish & Scup <Quota> Transfer")
+
+    def test_feed_links_to_the_summary_not_the_federal_register(self):
+        import xml.etree.ElementTree as ET
+
+        item = ET.fromstring((self.out / "feed.xml").read_text(encoding="utf-8")).find(
+            "./channel/item"
+        )
+        link = item.findtext("link")
+
+        self.assertTrue(link.endswith("#2026-00004"), f"expected an on-site anchor: {link}")
+        self.assertNotIn("federalregister.gov", link)
+        # The original must still be reachable from the entry.
+        self.assertIn("https://example.gov/doc", item.findtext("description"))
+
+    def test_robots_asks_crawlers_to_stay_away(self):
+        robots = (self.out / "robots.txt").read_text(encoding="utf-8")
+        self.assertIn("User-agent: *", robots)
+        self.assertIn("Disallow: /", robots)
+
+    def test_page_advertises_the_feed(self):
+        page = (self.out / "index.html").read_text(encoding="utf-8")
+        self.assertIn('type="application/rss+xml"', page)
+        self.assertIn('href="feed.xml"', page)
+
+    def test_size_report_stays_quiet_until_it_matters(self):
+        self.assertIsNone(build_site._size_report(100_000, 24))
+        self.assertIsNotNone(build_site._size_report(5_000_000, 900))
+
+
 class TestBuildSite(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()

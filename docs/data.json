@@ -1,6 +1,6 @@
 {
   "generated": "2026-09-20",
-  "count": 23,
+  "count": 24,
   "species": [
     "Acadian redfish",
     "Albacore tuna",
@@ -1008,6 +1008,38 @@
         "Framework 72 had been submitted to NMFS but its approval status is not stated, so it is not clear whether the higher GB cod limits will take effect.",
         "The full sector-by-sector allocation table (Table 6) is reproduced as a dense number grid; individual sector allocations should be verified against the original document formatting."
       ],
+      "programs": [
+        "Greater Atlantic"
+      ]
+    },
+    {
+      "id": "2026-12307",
+      "title": "Fisheries of the Northeastern United States; Summer Flounder Fishery; Quota Transfer From North Carolina to Virginia",
+      "type": "Rule",
+      "published": "2026-06-18",
+      "effective": "2026-06-17",
+      "url": "https://www.federalregister.gov/documents/2026/06/18/2026-12307/fisheries-of-the-northeastern-united-states-summer-flounder-fishery-quota-transfer-from-north",
+      "what_changed": "North Carolina moved 496 pounds (225 kilograms) of its 2026 commercial summer flounder quota to Virginia. The states agreed to the swap, and the National Marine Fisheries Service (NMFS) Greater Atlantic Regional Administrator signed off on it. The transfer repays landings made in one state by a vessel permitted in the other under a safe harbor agreement. NMFS is publishing the updated 2026 commercial quota numbers for both states.",
+      "who_affected": "Commercial summer flounder operations working under the North Carolina and Virginia state quota shares. The summer flounder commercial quota is divided among coastal states from Maine through North Carolina.",
+      "key_details": [
+        "Amount transferred: 496 pounds (225 kilograms) of summer flounder",
+        "Revised 2026 North Carolina quota: 2,919,725 pounds (1,324,365 kilograms)",
+        "Revised 2026 Virginia quota: 2,421,008 pounds (1,098,151 kilograms)",
+        "Transfer runs through December 31, 2026",
+        "Reason given: repayment of landings by an out-of-state permitted vessel under a safe harbor agreement",
+        "Original 2026 allocations were published February 19, 2026 (91 FR 7896)",
+        "Transfer made under the Summer Flounder, Scup, and Black Sea Bass Fishery Management Plan, 50 CFR 648.102(c)(2)"
+      ],
+      "species": [
+        "Summer flounder"
+      ],
+      "regions": [
+        "North Carolina",
+        "Virginia",
+        "Mid-Atlantic",
+        "Greater Atlantic"
+      ],
+      "open_questions": [],
       "programs": [
         "Greater Atlantic"
       ]

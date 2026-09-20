@@ -144,6 +144,20 @@ def estimate_cost(input_tokens: int, output_tokens: int) -> float:
 
 # --- Site ----------------------------------------------------------------
 
+SITE_URL = "https://cruzer90633.github.io/fisheries-regulation-digest/"
+
+# Crawlers are asked to stay away. This is a deliberate choice, not an oversight:
+# the site is shared by link while it finds its audience, rather than turning up in
+# search results for regulatory questions before it has been used in anger.
+#
+# robots.txt is a request, not a control. It is honoured by the major search engines
+# and ignored by anyone who does not care. Nothing here is private — the site is
+# public and unauthenticated, and every summary links to a public federal document.
+# To reverse this, replace Disallow with Allow and rebuild.
+ROBOTS_TXT = """User-agent: *
+Disallow: /
+"""
+
 SITE_TITLE = "Fisheries Regulation Digest"
 SITE_TAGLINE = "Plain-English summaries of Mid-Atlantic and Greater Atlantic fishery rules."
 SITE_DISCLAIMER = (

@@ -241,6 +241,11 @@ def cmd_build(args) -> int:
         print("No approved summaries yet — the site will be empty. Run `review` first.")
     print(f"Wrote {result['count']} summaries to {result['path']}")
     print(f"  {result['species']} species and {result['regions']} regions available as filters.")
+    print(f"  Feed: {result['feed_items']} items in feed.xml")
+    print(f"  Page: {result['page_bytes'] / 1024:.0f} KB raw, roughly "
+          f"{result['wire_bytes'] / 1024:.0f} KB compressed on the wire.")
+    if result["size_warning"]:
+        print(f"  ! {result['size_warning']}")
     print(f"  Open: {result['path'] / 'index.html'}")
     return 0
 
