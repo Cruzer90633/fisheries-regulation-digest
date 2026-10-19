@@ -1,11 +1,11 @@
 {
-  "ran_at": "2026-10-12T07:42:08Z",
+  "ran_at": "2026-10-19T14:43:44Z",
   "days_back": 14,
   "fetched": 7,
-  "new": 5,
-  "drafted": 5,
+  "new": 1,
+  "drafted": 1,
   "failed": 0,
   "blocked": "",
-  "awaiting_review": 8,
+  "awaiting_review": 9,
   "published": 24
 }
